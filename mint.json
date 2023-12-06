@@ -70,7 +70,9 @@
             {
               "group": "Change IP",
               "pages": [
-                "proxy-actions/change-ip-manually", "proxy-actions/change-ip-automatically","proxy-actions/change-ip-link"
+                "proxy-actions/change-ip-manually",
+                "proxy-actions/change-ip-automatically",
+                "proxy-actions/change-ip-link"
               ]
             },
             "proxy-actions/power-cycle"
