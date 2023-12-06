@@ -13,11 +13,6 @@
       "url": "https://cmd.illusory.io"
     }
   ],
-  "security": [
-    {
-      "bearerAuth": []
-    }
-  ],
   "paths": {
     "/plants": {
       "get": {
