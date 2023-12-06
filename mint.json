@@ -59,7 +59,7 @@
     },
     {
       "group": "Proxy Actions",
-      "pages": ["proxy-actions/change-ip-manually"]
+      "pages": ["proxy-actions/change-ip-manually", "proxy-actions/change-ip-automatically", "proxy-actions/change-ip-link"]
     },
     {
       "group": "Essentials",
