@@ -14,7 +14,7 @@
     }
   ],
   "paths": {
-    "/v1/proxies/{apiKey}/{proxyName}": {
+    "/v1/proxies/:apiKey/:proxyName": {
       "get": {
         "description": "Return a proxy associated with the specified `apiKey`",
         "parameters": [
