@@ -71,6 +71,10 @@
       ]
     },
     {
+      "group": "Proxy Actions",
+      "pages": ["proxy-actions/change-ip-manually", "proxy-actions/change-ip-automatically","proxy-actions/change-ip-link"]
+    },
+    {
       "group": "Proxy Authentication",
       "pages": ["proxy-authentication/methods/proxy-auth-basic", "proxy-authentication/methods/proxy-auth-whitelist"]
     },
