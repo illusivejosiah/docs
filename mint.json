@@ -69,8 +69,8 @@
           "pages": ["proxy-authentication/introduction","proxy-authentication/proxy-auth-basic", "proxy-authentication/proxy-auth-whitelist"]
         },
         {
-          "group": "",
-          "pages": ["proxy-authentication/methods/proxy-auth-basic", "proxy-authentication/methods/proxy-auth-whitelist"]
+          "group": "Management",
+          "pages": ["proxy-authentication/proxy-auth-basic", "proxy-authentication/proxy-auth-whitelist"]
         }
       ]
     },
