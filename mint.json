@@ -16,7 +16,7 @@
     },
     "background": {
       "light": "#ffffff",
-        "dark": "#000000"
+      "dark": "#000000"
     }
   },
   "topbarLinks": [
@@ -55,32 +55,59 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
+      "pages": [
+        "introduction",
+        "quickstart",
+        "development"
+      ]
     },
     {
       "group": "Proxies",
       "pages": [
         {
           "group": "Actions",
-          "pages": ["proxy-actions/change-ip-manually", "proxy-actions/change-ip-automatically","proxy-actions/change-ip-link", "proxy-actions/power-cycle"]
+          "pages": [
+            {
+              "group": "Change IP",
+              "pages": [
+                "proxy-actions/change-ip-manually", "proxy-actions/change-ip-automatically","proxy-actions/change-ip-link"
+              ]
+            },
+            "proxy-actions/power-cycle"
+          ]
         },
         {
           "group": "Authentication",
-          "pages": ["proxy-authentication/introduction","proxy-authentication/proxy-auth-basic", "proxy-authentication/proxy-auth-whitelist"]
+          "pages": [
+            "proxy-authentication/introduction",
+            "proxy-authentication/proxy-auth-basic",
+            "proxy-authentication/proxy-auth-whitelist"
+          ]
         },
         {
           "group": "Management",
-          "pages": ["proxy-authentication/proxy-auth-basic", "proxy-authentication/proxy-auth-whitelist"]
+          "pages": [
+            "proxy-authentication/proxy-auth-basic",
+            "proxy-authentication/proxy-auth-whitelist"
+          ]
         }
       ]
     },
     {
       "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
+      "pages": [
+        "essentials/markdown",
+        "essentials/code",
+        "essentials/images",
+        "essentials/settings",
+        "essentials/navigation"
+      ]
     },
     {
       "group": "API Documentation",
-      "pages": ["api-reference/introduction"]
+      "pages": [
+        "api-reference/introduction"
+      ]
     },
     {
       "group": "Endpoint Examples",
