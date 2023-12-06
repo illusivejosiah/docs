@@ -14,17 +14,26 @@
     }
   ],
   "paths": {
-    "/plants": {
+    "/v1/proxies/{apiKey}/{proxyName}": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
+        "description": "Return a proxy associated with the specified `apiKey`",
         "parameters": [
           {
-            "name": "limit",
-            "in": "query",
-            "description": "The maximum number of results to return",
+            "name": "apiKey",
+            "in": "path",
+            "description": "Replace `:apiKey` in the url path with `YOUR_API_KEY` to authenticate the request.",
+            "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
+            }
+          },
+          {
+            "name": "proxyName",
+            "in": "path",
+            "description": "Replace `:proxyName` in the url path with `YOUR_PROXY` to retrieve the details.",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -53,7 +62,9 @@
             }
           }
         }
-      },
+      }
+    },
+    "/plants/2": {
       "post": {
         "description": "Creates a new plant in the store",
         "requestBody": {
