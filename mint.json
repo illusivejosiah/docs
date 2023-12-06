@@ -63,7 +63,7 @@
     },
     {
       "group": "Proxy Authentication",
-      "pages": ["proxy-actions/methods/proxy-auth-basic"]
+      "pages": ["proxy-authentication/methods/proxy-auth-basic"]
     },
     {
       "group": "Essentials",
