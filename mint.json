@@ -58,8 +58,17 @@
       "pages": ["introduction", "quickstart", "development"]
     },
     {
+      "group": "Platform",
+      "pages": [
+        {
+          "group": "Proxy Actions",
+          "pages": ["proxy-actions/change-ip-manually", "proxy-actions/change-ip-automatically","proxy-actions/change-ip-link"]
+        }
+      ]
+    },
+    {
       "group": "Proxy Actions",
-      "pages": ["proxy-actions/change-ip-manually", "proxy-actions/change-ip-automatically", "proxy-actions/change-ip-link"]
+      "pages": ["proxy-actions/change-ip-manually", "proxy-actions/change-ip-automatically","proxy-actions/change-ip-link"]
     },
     {
       "group": "Proxy Authentication",
