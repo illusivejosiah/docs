@@ -55,7 +55,11 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development", "proxy-actions/change-ip-manually"]
+      "pages": ["introduction", "quickstart", "development"]
+    },
+    {
+      "group": "Proxy Actions",
+      "pages": ["proxy-actions/change-ip-manually"]
     },
     {
       "group": "Essentials",
