@@ -58,25 +58,17 @@
       "pages": ["introduction", "quickstart", "development"]
     },
     {
-      "group": "Platform",
+      "group": "Proxies",
       "pages": [
         {
-          "group": "Proxy Actions",
-          "pages": ["proxy-actions/change-ip-manually", "proxy-actions/change-ip-automatically","proxy-actions/change-ip-link"]
+          "group": "Actions",
+          "pages": ["proxy-actions/change-ip-manually", "proxy-actions/change-ip-automatically","proxy-actions/change-ip-link", "proxy-actions/power-cycle"]
         },
         {
-          "group": "Proxy Authentication",
+          "group": "Authentication",
           "pages": ["proxy-authentication/methods/proxy-auth-basic", "proxy-authentication/methods/proxy-auth-whitelist"]
         }
       ]
-    },
-    {
-      "group": "Proxy Actions",
-      "pages": ["proxy-actions/change-ip-manually", "proxy-actions/change-ip-automatically","proxy-actions/change-ip-link"]
-    },
-    {
-      "group": "Proxy Authentication",
-      "pages": ["proxy-authentication/methods/proxy-auth-basic", "proxy-authentication/methods/proxy-auth-whitelist"]
     },
     {
       "group": "Essentials",
