@@ -39,7 +39,7 @@
       "name": "API Reference",
       "icon": "rectangle-terminal",
       "iconType": "duotone",
-      "url": "https://illusory.mintlify.app/docs/api-reference/introduction"
+      "url": "api-reference"
     },
     {
       "name": "Knowledge Base",
