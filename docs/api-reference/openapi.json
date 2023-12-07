@@ -39,10 +39,11 @@
         ],
         "responses": {
           "200": {
-            "description": "Sever response",
+            "description": "Server response",
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "object",
                   "properties": {
                     "ok": {
                       "type": "boolean",
@@ -51,9 +52,7 @@
                     "data": {
                       "type": "object",
                       "description": "An object of proxy details",
-                      "items": {
-                        "$ref": "#/components/schemas/proxy-get"
-                      }
+                      "$ref": "#/components/schemas/proxy-get"
                     }
                   }
                 }
@@ -298,8 +297,7 @@
             }
           }
         }
-      }
-    ,
+      },
       "Error": {
         "required": [
           "error",
