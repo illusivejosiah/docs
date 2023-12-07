@@ -139,18 +139,20 @@
   "components": {
     "schemas": {
       "Plant": {
+        "type": "object",
         "required": [
           "name"
         ],
-        "type": "object",
         "properties": {
           "name": {
+            "type": "string",
             "description": "The name of the plant",
-            "type": "string"
+            "example": "Rose"
           },
           "tag": {
+            "type": "string",
             "description": "Tag to specify the type",
-            "type": "string"
+            "example": "Flowering"
           }
         }
       },
