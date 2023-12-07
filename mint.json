@@ -124,7 +124,12 @@
         {
           "group": "iOS",
           "pages": [
-            "connect/ios/ios-wifi-apps",
+            "connect/ios/ios-wifi-apps"
+          ]
+        },
+        {
+          "group": "Android",
+          "pages": [
             "connect/android/android-wifi"
           ]
         }
