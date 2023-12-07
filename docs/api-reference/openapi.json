@@ -289,9 +289,20 @@
         }
       },
       "proxy-list": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/proxy-get"
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean",
+            "description": "Indicates whether the request was successful",
+            "example": true
+          },
+          "data": {
+            "type": "array",
+            "description": "An array of proxy details",
+            "items": {
+              "$ref": "#/components/schemas/proxy-get"
+            }
+          }
         }
       },
       "Error": {
