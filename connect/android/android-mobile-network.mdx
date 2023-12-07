@@ -1,0 +1,97 @@
+---
+title: 'Android Mobile Network'
+description: 'Using Illusory with Android.'
+---
+
+### Setup Illusory on Android over Mobile Network
+
+You can forward your Android device’s mobile network traffic through Illusory. This will change your IP address and location. Here’s how to set it up:
+
+<Steps>
+    <Step title="Find Mobile Network">
+        Go to the `Settings` app and select `Network & Internet.
+
+        <Frame>
+            <img src="/images/connect/android/mobile/how-to-set-up-proxy-on-android-mobile-data-1.png"/>
+        </Frame>
+
+    </Step>
+    <Step title="Select Mobile Network">
+        Tap on `Mobile Network`.
+
+        <Frame>
+            <img src="/images/connect/android/mobile/how-to-set-up-proxy-on-android-mobile-data-2.png"/>
+        </Frame>
+
+    </Step>
+    <Step title="Advanced Network Settings">
+
+        Navigate to the `Advanced` settings of your mobile network
+
+        <Frame>
+            <img src="/images/connect/android/mobile/how-to-set-up-proxy-on-android-mobile-data-3.png"/>
+        </Frame>
+
+    </Step>
+    <Step title="Access Point Names">
+        Find Access Point Names
+
+        <Frame>
+            <img src="/images/connect/android/mobile/how-to-set-up-proxy-on-android-mobile-data-4.png"/>
+        </Frame>
+
+    </Step>
+    <Step title="Select APN">
+        Tap on the APN you are currently using
+
+        <Frame>
+            <img src="/images/connect/android/mobile/how-to-set-up-proxy-on-android-mobile-data-5.png"/>
+        </Frame>
+
+
+    </Step>
+    <Step title="Add proxy details">
+        Enter the proxy `Server IP` and `Port` found in your dashboard under <b>Connect</b>.
+
+        <Note>
+            If you're using Whitelist IP (recommended) then you can skip adding a username and password.
+        </Note>
+
+        <Frame>
+            <img src="/images/connect/android/mobile/how-to-set-up-proxy-on-android-mobile-data-6.png"/>
+        </Frame>
+
+    </Step>
+    <Step title="Apply APN Settings">
+
+        Click the 3 dots at the top of the screen and `Save`.
+
+        <Frame>
+            <img src="/images/connect/android/mobile/how-to-set-up-proxy-on-android-mobile-data-7.png"/>
+        </Frame>
+
+    </Step>
+
+    <Step title="Authenticate">
+
+        Enter the proxy `Server IP` and `Port` found in your dashboard under <b>Connect</b>.
+
+        <Frame>
+            <img src="/images/connect/android/mobile/how-to-set-up-proxy-on-android-mobile-data-8.png"/>
+        </Frame>
+
+        Unlike iOS, Android devices don’t have fields for authenticating the proxy server in the settings. Instead,
+        you’ll be asked to authenticate when you open your web browser. There, simply enter your credentials: username
+        and password.
+
+        <Note>
+            If you’ve authenticated by whitelisting your IP address, you don’t need to enter the credentials. We
+            recommend using whitelist IP for Android and iOS connections for ease of use.
+        </Note>
+
+    </Step>
+    <Step title="Test">
+        Go to [What Is My IP Address](https://whatismyipaddress.com/) to see if your IP address and location have
+        changed.
+    </Step>
+</Steps>

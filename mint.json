@@ -130,7 +130,8 @@
         {
           "group": "Android",
           "pages": [
-            "connect/android/android-wifi"
+            "connect/android/android-wifi",
+            "connect/android/android-mobile-network"
           ]
         }
       ]
