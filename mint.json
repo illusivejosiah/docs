@@ -124,7 +124,7 @@
         {
           "group": "iOS",
           "pages": [
-            "connect/ios/ios-wifi-apps",
+            "connect/ios/ios-wifi-apps"
           ]
         }
       ]
