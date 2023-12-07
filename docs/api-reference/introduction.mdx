@@ -1,33 +1,27 @@
 ---
 title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+description: 'Understand general concepts, response codes, and authentication strategies.'
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+### Base URL
 
-## Welcome
+The Illusory API is built on REST principles. We enforce HTTPS in every request to improve data security, integrity, and privacy. The API does not support HTTP.
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+All requests contain the following base URL:
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
-
-## Authentication
-
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
-
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
 ```
+https://cmd.illusory.io
+```
+
+### Authentication
+
+To authenticate you need to add an Authorization header with the contents of the header being `Bearer zpka_12345` where `zpka_12345` is your [API Key](https://app.illusory.io/settings/developers).
+
+```
+Authorization: Bearer zpka_12345
+```
+
+
+### Rate Limiting
+
+Different endpoints have different rate limits. If you exceed the rate limit you will receive a `429` response code.

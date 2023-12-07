@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "OpenAPI Plant Store",
-    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
+    "title": "Illusory API Reference",
+    "description": "Interact with Illusory proxies",
     "license": {
       "name": "MIT"
     },
@@ -39,7 +39,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Plant response",
+            "description": "Sever response",
             "content": {
               "application/json": {
                 "schema": {
