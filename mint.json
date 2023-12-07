@@ -121,6 +121,7 @@
     {
       "group": "Connect",
       "pages": [
+        "connect/introduction",
         {
           "group": "iOS",
           "pages": [
@@ -132,6 +133,18 @@
           "pages": [
             "connect/android/android-wifi",
             "connect/android/android-mobile-network"
+          ]
+        },
+        {
+          "group": "macOS",
+          "pages": [
+            "connect/macos/macos-wifi"
+          ]
+        },
+        {
+          "group": "Mozilla",
+          "pages": [
+            "connect/mozilla/mozilla-foxyproxy"
           ]
         }
       ]
