@@ -29,19 +29,12 @@
     "name": "Dashboard",
     "url": "https://app.illusory.io"
   },
-  "tabs": [
-    {
-      "name": "",
-      "url": "api-reference"
-    }
-  ],
+  "topAnchor": {
+    "name": "Documentation",
+    "icon": "book-open",
+    "iconType": "duotone"
+  },
   "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open",
-      "iconType": "duotone",
-      "url": "https://illusory.mintlify.app/docs/introduction"
-    },
     {
       "name": "API Reference",
       "icon": "rectangle-terminal",
