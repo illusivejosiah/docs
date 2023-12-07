@@ -45,7 +45,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Plant"
+                    "$ref": "#/components/schemas/Proxy"
                   }
                 }
               }
@@ -84,7 +84,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Plant"
+                  "$ref": "#/components/schemas/Proxy"
                 }
               }
             }
@@ -138,28 +138,54 @@
   },
   "components": {
     "schemas": {
-      "Plant": {
+      "Proxy": {
         "type": "object",
         "required": [
           "name"
         ],
         "properties": {
-          "name": {
-            "type": "string",
-            "description": "The name of the plant",
-            "example": "Rose"
+          "ok": {
+            "type": "boolean",
+            "description": "Whether the request was successful or not",
+            "example": true
           },
-          "tag": {
-            "type": "string",
-            "description": "Tag to specify the type",
-            "example": "Flowering"
+          "data": {
+            "type": "object",
+            "description": "The data returned from the request",
+            "example": {
+              "proxy_name": "ILL-US-AU1-9999",
+              "nickname": null,
+              "isp": "Verizon",
+              "period": "weekly",
+              "auto_renew": false,
+              "auto_renew_interval": 1,
+              "added_at": "2023-12-04T17:43:16.407+00:00",
+              "expires_at": "2023-12-14T23:23:09.792+00:00",
+              "network_status": "online",
+              "server_ip": "198.765.543.21",
+              "h_port": 12345,
+              "s_port": 67890,
+              "auth_method": "basic",
+              "username": "john",
+              "password": "wick05",
+              "whitelist": null,
+              "auto_change": false,
+              "auto_change_time": 0,
+              "last_ip_change": "2023-12-04T17:51:40.339+00:00",
+              "last_reboot": "2023-12-04T17:51:40.339+00:00",
+              "traffic": 60156561622,
+              "h_threads": 99,
+              "s_threads": 0,
+              "city": "Austin",
+              "state": "TX"
+            }
           }
         }
       },
       "NewPlant": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/Plant"
+            "$ref": "#/components/schemas/Proxy"
           },
           {
             "required": [
