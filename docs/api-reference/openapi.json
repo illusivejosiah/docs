@@ -99,10 +99,10 @@
                       "description": "Indicates whether the request was successful"
                     },
                     "data": {
-                      "type": "object",
-                      "description": "An object of proxy details",
+                      "type": "array",
+                      "description": "An array of proxy details",
                       "items": {
-                        "$ref": "#/components/schemas/proxy-get"
+                        "$ref": "#/components/schemas/proxy-list"
                       }
                     }
                   }
