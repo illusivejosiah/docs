@@ -86,7 +86,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/proxy-get"
+                    "$ref": "#/components/schemas/proxy-list"
                   }
                 }
               }
@@ -288,25 +288,11 @@
           }
         }
       },
-      "NewPlant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/proxy-get"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          }
-        ]
+      "proxy-list": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/proxy-get"
+        }
       },
       "Error": {
         "required": [
