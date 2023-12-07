@@ -32,11 +32,11 @@
   "tabs": [
     {
       "name": "Documentation",
-      "url": "/docs/introduction"
+      "url": "docs/introduction"
     },
     {
       "name": "API Reference",
-      "url": "/docs/api-reference/introduction"
+      "url": "docs/api-reference/introduction"
     }
   ],
   "anchors": [
@@ -44,13 +44,13 @@
       "name": "Documentation",
       "icon": "book-open",
       "iconType": "duotone",
-      "url": "/docs/introduction"
+      "url": "docs/introduction"
     },
     {
       "name": "API Reference",
       "icon": "rectangle-terminal",
       "iconType": "duotone",
-      "url": "/docs/api-reference/introduction"
+      "url": "docs/api-reference/introduction"
     },
     {
       "name": "Knowledge Base",
