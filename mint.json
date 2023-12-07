@@ -40,13 +40,13 @@
       "name": "Documentation",
       "icon": "book-open",
       "iconType": "duotone",
-      "url": "docs/introduction"
+      "url": "introduction"
     },
     {
       "name": "API Reference",
       "icon": "rectangle-terminal",
       "iconType": "duotone",
-      "url": "docs/api-reference/introduction"
+      "url": "api-reference/introduction"
     },
     {
       "name": "Knowledge Base",
@@ -59,7 +59,7 @@
     {
       "group": "Documentation",
       "pages": [
-        "docs/introduction"
+        "introduction"
       ]
     },
     {
@@ -68,8 +68,8 @@
         {
           "group": "Account",
           "pages": [
-            "docs/account/add-funds",
-            "docs/account/member"
+            "account/add-funds",
+            "account/member"
           ]
         }
       ]
@@ -83,38 +83,38 @@
             {
               "group": "Change IP",
               "pages": [
-                "docs/proxy-actions/change-ip/introduction",
-                "docs/proxy-actions/change-ip/change-ip-manually",
-                "docs/proxy-actions/change-ip/change-ip-automatically",
-                "docs/proxy-actions/change-ip/change-ip-link"
+                "proxy-actions/change-ip/introduction",
+                "proxy-actions/change-ip/change-ip-manually",
+                "proxy-actions/change-ip/change-ip-automatically",
+                "proxy-actions/change-ip/change-ip-link"
               ]
             },
-            "docs/proxy-actions/power-cycle"
+            "proxy-actions/power-cycle"
           ]
         },
         {
           "group": "Authentication",
           "pages": [
-            "docs/proxy-authentication/introduction",
-            "docs/proxy-authentication/proxy-auth-basic",
-            "docs/proxy-authentication/proxy-auth-whitelist"
+            "proxy-authentication/introduction",
+            "proxy-authentication/proxy-auth-basic",
+            "proxy-authentication/proxy-auth-whitelist"
           ]
         },
         {
           "group": "Expiration",
           "pages": [
-            "docs/proxy-expiration/introduction",
-            "docs/proxy-expiration/proxy-renew",
-            "docs/proxy-expiration/proxy-extend"
+            "proxy-expiration/introduction",
+            "proxy-expiration/proxy-renew",
+            "proxy-expiration/proxy-extend"
           ]
         },
         {
           "group": "Management",
           "pages": [
-            "docs/proxy-management/introduction",
-            "docs/proxy-management/proxy-add",
-            "docs/proxy-management/proxy-swap",
-            "docs/proxy-management/proxy-remove"
+            "proxy-management/introduction",
+            "proxy-management/proxy-add",
+            "proxy-management/proxy-swap",
+            "proxy-management/proxy-remove"
           ]
         }
       ]
@@ -122,7 +122,7 @@
     {
       "group": "Connect",
       "pages": [
-        "docs/connect/introduction",
+        "connect/introduction",
         {
           "group": "iOS",
           "pages": [
@@ -132,20 +132,20 @@
         {
           "group": "Android",
           "pages": [
-            "docs/connect/android/android-wifi",
-            "docs/connect/android/android-mobile-network"
+            "connect/android/android-wifi",
+            "connect/android/android-mobile-network"
           ]
         },
         {
           "group": "macOS",
           "pages": [
-            "docs/connect/macos/macos-wifi"
+            "connect/macos/macos-wifi"
           ]
         },
         {
           "group": "Mozilla",
           "pages": [
-            "docs/connect/mozilla/macos-foxyproxy"
+            "connect/mozilla/macos-foxyproxy"
           ]
         }
       ]
@@ -153,15 +153,15 @@
     {
       "group": "API Reference",
       "pages": [
-        "docs/api-reference/introduction"
+        "api-reference/introduction"
       ]
     },
     {
       "group": "Endpoint Examples",
       "pages": [
-        "docs/api-reference/endpoint/get",
-        "docs/api-reference/endpoint/create",
-        "docs/api-reference/endpoint/delete"
+        "api-reference/endpoint/get",
+        "api-reference/endpoint/create",
+        "api-reference/endpoint/delete"
       ]
     }
   ],
