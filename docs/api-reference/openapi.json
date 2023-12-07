@@ -21,7 +21,7 @@
           {
             "name": "apiKey",
             "in": "path",
-            "description": "Replace `:apiKey` in the url path with `YOUR_API_KEY` to authenticate the request.",
+            "description": "Replace `{apiKey}` in the url path with `YOUR_API_KEY` to authenticate the request.",
             "required": true,
             "schema": {
               "type": "string"
@@ -30,7 +30,7 @@
           {
             "name": "proxyName",
             "in": "path",
-            "description": "Replace `:proxyName` in the url path with `YOUR_PROXY` to retrieve the details.",
+            "description": "Replace `{proxyName}` in the url path with `YOUR_PROXY` to retrieve the details.",
             "required": true,
             "schema": {
               "type": "string"
@@ -45,7 +45,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Proxy"
+                    "$ref": "#/components/schemas/proxy-get"
                   }
                 }
               }
@@ -64,33 +64,36 @@
         }
       }
     },
-    "/plants/2": {
-      "post": {
-        "description": "Creates a new plant in the store",
-        "requestBody": {
-          "description": "Plant to add to the store",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewPlant"
-              }
+    "/v1/proxies/{apiKey}": {
+      "get": {
+        "description": "Return a proxy associated with the specified `apiKey`",
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "path",
+            "description": "Replace `{apiKey}` in the url path with `YOUR_API_KEY` to authenticate the request.",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
-          },
-          "required": true
-        },
+          }
+        ],
         "responses": {
           "200": {
-            "description": "plant response",
+            "description": "Sever response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Proxy"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/proxy-get"
+                  }
                 }
               }
             }
           },
           "400": {
-            "description": "unexpected error",
+            "description": "Unexpected error",
             "content": {
               "application/json": {
                 "schema": {
@@ -138,11 +141,8 @@
   },
   "components": {
     "schemas": {
-      "Proxy": {
+      "proxy-get": {
         "type": "object",
-        "required": [
-          "name"
-        ],
         "properties": {
           "ok": {
             "type": "boolean",
@@ -160,7 +160,8 @@
               },
               "nickname": {
                 "type": "string",
-                "description": "Optional nickname for the user or proxy",
+                "description": "Optional nickname for the user or proxy.",
+                "example": null,
                 "nullable": true
               },
               "isp": {
@@ -233,6 +234,7 @@
               "whitelist": {
                 "type": "string",
                 "description": "List of whitelisted IP addresses or domains, can be `null`",
+                "example": null,
                 "nullable": true
               },
               "auto_change": {
@@ -242,7 +244,7 @@
               },
               "auto_change_time": {
                 "type": "integer",
-                "description": "Time interval for automatic IP change, in hours",
+                "description": "Time interval for automatic IP change, in minutes",
                 "example": 0
               },
               "last_ip_change": {
@@ -269,7 +271,7 @@
               },
               "s_threads": {
                 "type": "integer",
-                "description": "Number of active secure threads",
+                "description": "Number of active SOCKS5 threads",
                 "example": 0
               },
               "city": {
@@ -279,7 +281,7 @@
               },
               "state": {
                 "type": "string",
-                "description": "The state where the server is located",
+                "description": "The abbreviated state where the server is located. e.g., `TX`",
                 "example": "TX"
               }
             }
@@ -289,7 +291,7 @@
       "NewPlant": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/Proxy"
+            "$ref": "#/components/schemas/proxy-get"
           },
           {
             "required": [
