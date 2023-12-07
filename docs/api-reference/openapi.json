@@ -146,38 +146,142 @@
         "properties": {
           "ok": {
             "type": "boolean",
-            "description": "Whether the request was successful or not",
+            "description": "Indicates whether the request was successful",
             "example": true
           },
           "data": {
             "type": "object",
-            "description": "The data returned from the request",
-            "example": {
-              "proxy_name": "ILL-US-AU1-9999",
-              "nickname": null,
-              "isp": "Verizon",
-              "period": "weekly",
-              "auto_renew": false,
-              "auto_renew_interval": 1,
-              "added_at": "2023-12-04T17:43:16.407+00:00",
-              "expires_at": "2023-12-14T23:23:09.792+00:00",
-              "network_status": "online",
-              "server_ip": "198.765.543.21",
-              "h_port": 12345,
-              "s_port": 67890,
-              "auth_method": "basic",
-              "username": "john",
-              "password": "wick05",
-              "whitelist": null,
-              "auto_change": false,
-              "auto_change_time": 0,
-              "last_ip_change": "2023-12-04T17:51:40.339+00:00",
-              "last_reboot": "2023-12-04T17:51:40.339+00:00",
-              "traffic": 60156561622,
-              "h_threads": 99,
-              "s_threads": 0,
-              "city": "Austin",
-              "state": "TX"
+            "description": "Contains the detailed information returned from the request",
+            "properties": {
+              "proxy_name": {
+                "type": "string",
+                "description": "Unique identifier of the proxy server",
+                "example": "ILL-US-AU1-9999"
+              },
+              "nickname": {
+                "type": "string",
+                "description": "Optional nickname for the user or proxy",
+                "nullable": true
+              },
+              "isp": {
+                "type": "string",
+                "description": "Name of the Internet Service Provider",
+                "example": "Verizon"
+              },
+              "period": {
+                "type": "string",
+                "description": "Subscription period, e.g., `weekly`, `monthly`",
+                "example": "weekly"
+              },
+              "auto_renew": {
+                "type": "boolean",
+                "description": "Indicates whether the expiration auto-renews",
+                "example": false
+              },
+              "auto_renew_interval": {
+                "type": "integer",
+                "description": "The period interval for auto-renewal",
+                "example": 1
+              },
+              "added_at": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Timestamp of when the proxy was added",
+                "example": "2023-12-04T17:43:16.407+00:00"
+              },
+              "expires_at": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Timestamp of when the proxy will expire",
+                "example": "2023-12-14T23:23:09.792+00:00"
+              },
+              "network_status": {
+                "type": "string",
+                "description": "Current status of the network, e.g., `online`, `offline`, `rebooting`",
+                "example": "online"
+              },
+              "server_ip": {
+                "type": "string",
+                "description": "IP address of the server",
+                "example": "198.765.543.21"
+              },
+              "h_port": {
+                "type": "integer",
+                "description": "Port number for HTTP connections",
+                "example": 12345
+              },
+              "s_port": {
+                "type": "integer",
+                "description": "Port number for SOCKS5 connections",
+                "example": 67890
+              },
+              "auth_method": {
+                "type": "string",
+                "description": "Authentication method. `basic` or `whitelist`",
+                "example": "basic"
+              },
+              "username": {
+                "type": "string",
+                "description": "Username for authentication",
+                "example": "john"
+              },
+              "password": {
+                "type": "string",
+                "description": "Password for authentication",
+                "example": "wick05"
+              },
+              "whitelist": {
+                "type": "string",
+                "description": "List of whitelisted IP addresses or domains, can be `null`",
+                "nullable": true
+              },
+              "auto_change": {
+                "type": "boolean",
+                "description": "Indicates whether the IP changes automatically",
+                "example": false
+              },
+              "auto_change_time": {
+                "type": "integer",
+                "description": "Time interval for automatic IP change, in hours",
+                "example": 0
+              },
+              "last_ip_change": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Timestamp of the last IP change",
+                "example": "2023-12-04T17:51:40.339+00:00"
+              },
+              "last_reboot": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Timestamp of the last server reboot",
+                "example": "2023-12-04T17:51:40.339+00:00"
+              },
+              "traffic": {
+                "type": "integer",
+                "description": "Total network traffic in bytes",
+                "example": 60156561622
+              },
+              "h_threads": {
+                "type": "integer",
+                "description": "Number of active HTTP threads",
+                "example": 99
+              },
+              "s_threads": {
+                "type": "integer",
+                "description": "Number of active secure threads",
+                "example": 0
+              },
+              "city": {
+                "type": "string",
+                "description": "The city where the server is located",
+                "example": "Austin"
+              },
+              "state": {
+                "type": "string",
+                "description": "The state where the server is located",
+                "example": "TX"
+              }
             }
           }
         }
