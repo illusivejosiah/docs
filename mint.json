@@ -29,7 +29,16 @@
     "name": "Dashboard",
     "url": "https://app.illusory.io"
   },
-  "tabs": [],
+  "tabs": [
+    {
+      "name": "Documentation",
+      "url": "/docs/introduction"
+    },
+    {
+      "name": "API Reference",
+      "url": "/docs/api-reference/introduction"
+    }
+  ],
   "anchors": [
     {
       "name": "Documentation",
