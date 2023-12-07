@@ -94,6 +94,15 @@
             "proxy-expiration/proxy-renew",
             "proxy-expiration/proxy-extend"
           ]
+        },
+        {
+          "group": "Management",
+          "pages": [
+            "proxy-management/introduction",
+            "proxy-management/proxy-add",
+            "proxy-management/proxy-swap",
+            "proxy-management/proxy-remove"
+          ]
         }
       ]
     },
