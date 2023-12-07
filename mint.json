@@ -31,12 +31,6 @@
   },
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open",
-      "iconType": "duotone",
-      "url": "/docs"
-    },
-    {
       "name": "API Reference",
       "icon": "rectangle-terminal",
       "iconType": "duotone",
