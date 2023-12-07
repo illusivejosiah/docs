@@ -50,8 +50,6 @@
                       "description": "Indicates whether the request was successful"
                     },
                     "data": {
-                      "type": "object",
-                      "description": "An object of proxy details",
                       "$ref": "#/components/schemas/proxy-get"
                     }
                   }
