@@ -303,12 +303,26 @@
         ],
         "type": "object",
         "properties": {
-          "error": {
-            "type": "integer",
-            "format": "int32"
+          "ok": {
+            "type": "boolean",
+            "description": "Indicates the request was unsuccessful",
+            "example": false
+          },
+          "data": {
+            "type": "object",
+            "description": "Additional error data",
+            "properties": {
+              "proxy_name": {
+                "type": "string",
+                "description": "Unique identifier of the proxy server",
+                "example": "ILL-US-AU1-9999"
+              }
+            }
           },
           "message": {
-            "type": "string"
+            "type": "string",
+            "description": "Error message",
+            "example": "Proxy not found"
           }
         }
       }
