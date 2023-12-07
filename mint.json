@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Illusory Docs",
+  "name": "Illusory",
   "logo": {
     "dark": "/logo/illusory_logo--pad_left.svg",
     "light": "/logo/light.svg"
@@ -29,18 +29,13 @@
     "name": "Dashboard",
     "url": "https://app.illusory.io"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
+  "tabs": [],
   "anchors": [
     {
       "name": "API Reference",
       "icon": "rectangle-terminal",
       "iconType": "duotone",
-      "url": "/docs/api-reference/introduction"
+      "url": "api-reference/introduction"
     },
     {
       "name": "Knowledge Base",
@@ -145,7 +140,7 @@
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "API Reference",
       "pages": [
         "api-reference/introduction"
       ]
