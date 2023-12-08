@@ -315,7 +315,8 @@
           "ok": {
             "type": "boolean",
             "description": "Indicates the request was unsuccessful e.g., `false`",
-            "example": false
+            "example": false,
+            "default": false
           },
           "data": {
             "type": "object",
