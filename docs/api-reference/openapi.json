@@ -16,7 +16,7 @@
   "paths": {
     "/v1/proxies/{proxyName}": {
       "get": {
-        "description": "Return a proxy associated with the specified `apiKey`",
+        "description": "Retrieves the details of a proxy server.",
         "parameters": [
           {
             "name": "proxyName",
@@ -66,18 +66,12 @@
         }
       }
     },
-    "/v1/proxies/{apiKey}": {
+    "/v1/proxies": {
       "get": {
-        "description": "Return a list of all proxies associated with the specified `apiKey`",
-        "parameters": [
+        "description": "Lists all proxy servers belonging to the account.",
+        "security": [
           {
-            "name": "apiKey",
-            "in": "path",
-            "description": "Replace `{apiKey}` in the url path with `YOUR_API_KEY` to authenticate the request.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "bearerAuth": []
           }
         ],
         "responses": {
@@ -104,19 +98,10 @@
         }
       }
     },
-    "/v1/proxies/changeip/{apiKey}/{proxyName}": {
+    "/v1/proxies/changeip/{proxyName}": {
       "get": {
-        "description": "Changes the external mobile IP of a proxy that target sites see.",
+        "description": "Changes the external mobile IP of a proxy server that are visible to target sites.",
         "parameters": [
-          {
-            "name": "apiKey",
-            "in": "path",
-            "description": "Replace `{apiKey}` in the url path with `YOUR_API_KEY` to authenticate the request.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "proxyName",
             "in": "path",
@@ -125,6 +110,11 @@
             "schema": {
               "type": "string"
             }
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
           }
         ],
         "responses": {
@@ -351,7 +341,7 @@
         "type": "http",
         "scheme": "bearer",
         "bearerFormat": "apiKey",
-        "description": "This API uses a Bearer authentication scheme. Please provide your API key as the bearer token. Format: 'Bearer YOUR_API_KEY'"
+        "description": "This API uses a Bearer authentication scheme. Please provide your API Key as the bearer token. Format: 'Bearer `YOUR_API_KEY'"
       }
     }
   }
