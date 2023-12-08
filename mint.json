@@ -5,7 +5,7 @@
     "dark": "/logo/illusory_logo--pad_left.svg",
     "light": "/logo/light.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/illusory--icon-50w.svg",
   "colors": {
     "primary": "#121212",
     "light": "#ffffff",
