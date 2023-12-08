@@ -11,7 +11,7 @@
       <stop offset="1" stop-color="#626570"/>
     </linearGradient>
     <linearGradient id="b" x1="20.279" x2="29.237" y1="32.876" y2="18" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#00C2FF"/>
+      <stop stop-color="#0F6"/>
       <stop offset="1" stop-color="#112141" stop-opacity=".23"/>
     </linearGradient>
   </defs>

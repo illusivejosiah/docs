@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Illusory",
   "logo": {
-    "dark": "/logo/illusory_logo--pad_left.svg",
+    "dark": "/logo/illusory-doc-logo.svg",
     "light": "/logo/light.svg"
   },
-  "favicon": "/illusory--icon-50w.svg",
+  "favicon": "/illusory-doc-favicon.svg",
   "colors": {
     "primary": "#121212",
     "light": "#ffffff",
