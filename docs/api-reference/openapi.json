@@ -43,7 +43,7 @@
                   "properties": {
                     "ok": {
                       "type": "boolean",
-                      "description": "Indicates whether the request was successful"
+                      "description": "Indicates whether the request was successful e.g., `true`"
                     },
                     "data": {
                       "$ref": "#/components/schemas/proxy-get"
@@ -127,7 +127,7 @@
                   "properties": {
                     "ok": {
                       "type": "boolean",
-                      "description": "Indicates whether the request was successful"
+                      "description": "Indicates whether the request was successful e.g., `true`"
                     },
                     "data": {
                       "$ref": "#/components/schemas/proxy-get"
@@ -294,7 +294,7 @@
         "properties": {
           "ok": {
             "type": "boolean",
-            "description": "Indicates whether the request was successful"
+            "description": "Indicates whether the request was successful e.g., `true`"
           },
           "data": {
             "type": "array",
@@ -314,7 +314,7 @@
         "properties": {
           "ok": {
             "type": "boolean",
-            "description": "Indicates the request was unsuccessful",
+            "description": "Indicates the request was unsuccessful e.g., `false`",
             "example": false
           },
           "data": {
