@@ -350,7 +350,8 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
-        "bearerFormat": "apiKey"
+        "bearerFormat": "apiKey",
+        "description": "This API uses a Bearer authentication scheme. Please provide your API key as the bearer token. Format: 'Bearer YOUR_API_KEY'"
       }
     }
   }
