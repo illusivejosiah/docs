@@ -306,17 +306,11 @@
         }
       },
       "Error": {
-        "required": [
-          "error",
-          "message"
-        ],
         "type": "object",
         "properties": {
           "ok": {
             "type": "boolean",
-            "description": "Indicates the request was unsuccessful e.g., `false`",
-            "example": false,
-            "default": false
+            "description": "Indicates the request was unsuccessful e.g., `false`"
           },
           "data": {
             "type": "object",
@@ -324,16 +318,21 @@
             "properties": {
               "proxy_name": {
                 "type": "string",
-                "description": "Unique identifier of the proxy server",
-                "example": "ILL-US-AU1-9999"
+                "description": "Unique identifier of the proxy server"
               }
             }
           },
           "message": {
             "type": "string",
-            "description": "Error message",
-            "example": "Proxy not found"
+            "description": "Error message"
           }
+        },
+        "example": {
+          "ok": false,
+          "data": {
+            "proxy_name": "ILL-US-AU1-9999"
+          },
+          "message": "Proxy not found"
         }
       }
     },
