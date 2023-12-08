@@ -162,13 +162,6 @@
     }
   },
   "components": {
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer",
-        "bearerFormat": "APIKEY"
-      }
-    },
     "schemas": {
       "proxy-get": {
         "type": "object",
@@ -351,6 +344,12 @@
             "example": "Proxy not found"
           }
         }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
       }
     }
   }
