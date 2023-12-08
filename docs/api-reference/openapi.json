@@ -99,7 +99,7 @@
       }
     },
     "/v1/proxies/changeip/{proxyName}": {
-      "get": {
+      "post": {
         "description": "Changes the external mobile IP of a proxy server that are visible to target sites.",
         "parameters": [
           {
