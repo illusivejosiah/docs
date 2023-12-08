@@ -162,6 +162,13 @@
     }
   },
   "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "apiKey"
+      }
+    },
     "schemas": {
       "proxy-get": {
         "type": "object",
