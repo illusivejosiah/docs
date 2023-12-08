@@ -341,7 +341,7 @@
         "type": "http",
         "scheme": "bearer",
         "bearerFormat": "apiKey",
-        "description": "This API uses a Bearer authentication scheme. Please provide your API Key as the bearer token. Format: 'Bearer `YOUR_API_KEY'"
+        "description": "The `Authorization` header is used to authenticate with the API using your API key. Value is of the format `Bearer YOUR_KEY_HERE`."
       }
     }
   }
