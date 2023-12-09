@@ -350,7 +350,7 @@
                       "example": "Successfully updated and enabled the whitelist IP(s)."
                     },
                     "data": {
-                      "$ref": "#/components/schemas/proxy-basic-auth"
+                      "$ref": "#/components/schemas/proxy-basic-whitelist"
                     }
                   }
                 }
