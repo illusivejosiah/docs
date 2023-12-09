@@ -320,7 +320,8 @@
                   "authorize_ip": {
                     "type": "string",
                     "description": "Set the IP address to authorize. Use commas to specify multiple IP addresses. e.g. `123.123.23,456.456.56/24,789.789.89`.",
-                    "example": "123.123.23,456.456.56/24,789.789.89"
+                    "example": "123.123.23,456.456.56/24,789.789.89",
+                    "required": true
                   }
                 }
               }
