@@ -219,7 +219,7 @@
     },
     "/v1/proxies/auth/basic/{proxyName}": {
       "patch": {
-        "description": "Updates the basic authorization details of a proxy server.",
+        "description": "Updates the basic authentication details of a proxy server.",
         "parameters": [
           {
             "name": "proxyName",
@@ -232,7 +232,7 @@
           }
         ],
         "requestBody": {
-          "description": "Basic authorization details",
+          "description": "Basic authentication details",
           "content": {
             "application/json": {
               "schema": {
@@ -240,12 +240,12 @@
                 "properties": {
                   "username": {
                     "type": "string",
-                    "description": "Username for authentication",
+                    "description": "Username for authentication e.g., `john`",
                     "example": "john"
                   },
                   "password": {
                     "type": "string",
-                    "description": "Password for authentication",
+                    "description": "Password for authentication e.g., `wick05`",
                     "example": "wick05"
                   }
                 }
@@ -273,10 +273,10 @@
                     "message": {
                       "type": "string",
                       "description": "Success message",
-                      "example": "Reset proxy command sent to device successfully."
+                      "example": "Both username and password were updated."
                     },
                     "data": {
-                      "$ref": "#/components/schemas/proxy-change-ip"
+                      "$ref": "#/components/schemas/proxy-basic-auth"
                     }
                   }
                 }
@@ -449,6 +449,32 @@
             "description": "Timestamp of when the proxy was added",
             "example": "2050-12-04T17:43:16.407+00:00"
           }
+        }
+      },
+      "proxy-basic-auth": {
+        "type": "object",
+        "properties": {
+          "proxy_name": {
+            "type": "string",
+            "description": "Unique identifier of the proxy server",
+            "example": "ILL-US-AU1-9999"
+          },
+          "last_auth_change": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp of when the proxy authentication was updated",
+            "example": "2050-12-04T17:43:16.407+00:00"
+          },
+          "username": {
+            "type": "string",
+            "description": "Username for authentication",
+            "example": "john"
+          },
+            "password": {
+                "type": "string",
+                "description": "Password for authentication",
+                "example": "wick05"
+            }
         }
       },
       "proxy-list": {
