@@ -194,7 +194,87 @@
                     "message": {
                       "type": "string",
                       "description": "Success message",
-                        "example": "Reset proxy command sent to device successfully."
+                      "example": "Reset proxy command sent to device successfully."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/proxy-change-ip"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/proxies/auth/basic/{proxyName}": {
+      "patch": {
+        "summary": "Testing summary.",
+        "description": "Updates the basic authorization of a proxy",
+        "parameters": [
+          {
+            "name": "proxyName",
+            "in": "path",
+            "description": "Replace `{proxyName}` in the url path with `YOUR_PROXY` to update the authorization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Basic authorization details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "description": "Username for authentication",
+                    "example": "john"
+                  },
+                  "password": {
+                    "type": "string",
+                    "description": "Password for authentication",
+                    "example": "wick05"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Server response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "description": "Indicates whether the request was successful e.g., `true`"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message",
+                      "example": "Reset proxy command sent to device successfully."
                     },
                     "data": {
                       "$ref": "#/components/schemas/proxy-change-ip"
