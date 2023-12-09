@@ -3,4 +3,6 @@ title: 'Basic Authentication'
 openapi: 'PATCH /v1/proxies/auth/basic/{proxyName}'
 ---
 
-<ParamField>proxyName</ParamField> is the name of the proxy to be updated.
+By default, all proxies utilize a randomly generated basic authorization in the format of `username:password`.
+
+<Info>Whitelist authorization will be disabled upon successfully updating basic authorization.</Info>
