@@ -15,11 +15,27 @@ https://cmd.illusory.io
 
 ### Authentication
 
-To authenticate you need to add an Authorization header with the contents of the header being `Bearer zpka_12345` where `zpka_12345` is your [API Key](https://app.illusory.io/settings/developers).
+To authenticate you need to add an Authorization header with the contents of the header being `Bearer zpka_12345` where `zpka_12345` is your [API Key](https://app.illusory.io/settings/developers).\
+
 
 ```
 Authorization: Bearer zpka_12345
 ```
+
+
+### Types of API Keys
+
+API keys come in two types:
+
+- `Master`
+- `Limited`
+
+Each key type is designed with certain permissions, enabling or restricting it from executing particular tasks. Here's a breakdown of the capabilities associated with each key type.
+
+| Type     | Scope                                 |
+| -------- | ------------------------------------- |
+| Master   | `account.all`, `proxies.all`          |
+| Limited  | `proxies.change_ip`                   |
 
 
 ### Rate Limiting
