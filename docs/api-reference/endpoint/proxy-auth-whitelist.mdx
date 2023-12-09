@@ -3,6 +3,8 @@ title: 'Whitelist Authentication'
 openapi: 'PATCH /v1/proxies/auth/whitelist/{proxyName}'
 ---
 
-By default, all proxies utilize a randomly generated basic authorization in the format of `username:password`. You can disable this basic authorization by updating the proxy's whitelist authorization.
+`Whitelist Authentication` is a method of restricting access to a proxy server based on the client's `IP address`. This is a useful method of restricting access to a proxy server to only those who need it.
+
+By default, all proxies upon deployment utilize a randomly generated basic authorization in the format of `username:password`. You can disable this basic authorization by updating the proxy's whitelisted IPs authorized to access the proxy server.
 
 <Info>Basic authorization will be disabled upon successfully updating whitelist authorization.</Info>

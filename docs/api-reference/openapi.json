@@ -298,7 +298,7 @@
     },
     "/v1/proxies/auth/whitelist/{proxyName}": {
       "patch": {
-        "description": "Updates the whitelist authentication details of a proxy server.",
+        "description": "Sets the whitelisted IP addresses authorized for a proxy server.",
         "parameters": [
           {
             "name": "proxyName",
