@@ -157,12 +157,12 @@
     },
     "/v1/proxies/changeip/{limitedApiKey}/{proxyName}": {
       "get": {
-        "description": "Changes the external mobile IP using a link. This endpoint is intended for use with `Limited` API keys.",
+        "description": "Changes the external mobile IP using a link and `Limited` API key.",
         "parameters": [
           {
             "name": "limitedApiKey",
             "in": "path",
-            "description": "Replace `{limitedApiKey}` in the url path with `YOUR_LIMITED_API_KEY` to retrieve the details. This endpoint is intended for use with `Limited` API keys and is less secure than the `POST` method.",
+            "description": "Replace `{limitedApiKey}` in the url path with `YOUR_LIMITED_API_KEY` to retrieve the details.",
             "required": true,
             "schema": {
               "type": "string"
