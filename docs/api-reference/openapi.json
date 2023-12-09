@@ -219,7 +219,7 @@
     },
     "/v1/proxies/auth/basic/{proxyName}": {
       "patch": {
-        "description": "<Warning>Test Warning.</Warning>",
+        "description": "Updates the basic authorization details of a proxy server.",
         "parameters": [
           {
             "name": "proxyName",
