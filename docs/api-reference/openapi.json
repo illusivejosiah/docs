@@ -129,8 +129,13 @@
                       "type": "boolean",
                       "description": "Indicates whether the request was successful e.g., `true`"
                     },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message",
+                      "example": "Reset proxy command sent to device successfully."
+                    },
                     "data": {
-                      "$ref": "#/components/schemas/proxy-get"
+                      "$ref": "#/components/schemas/proxy-change-ip"
                     }
                   }
                 }
@@ -186,8 +191,13 @@
                       "type": "boolean",
                       "description": "Indicates whether the request was successful e.g., `true`"
                     },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message",
+                        "example": "Reset proxy command sent to device successfully."
+                    },
                     "data": {
-                      "$ref": "#/components/schemas/proxy-get"
+                      "$ref": "#/components/schemas/proxy-change-ip"
                     }
                   }
                 }
@@ -248,13 +258,13 @@
             "type": "string",
             "format": "date-time",
             "description": "Timestamp of when the proxy was added",
-            "example": "2023-12-04T17:43:16.407+00:00"
+            "example": "2050-12-04T17:43:16.407+00:00"
           },
           "expires_at": {
             "type": "string",
             "format": "date-time",
             "description": "Timestamp of when the proxy will expire",
-            "example": "2023-12-14T23:23:09.792+00:00"
+            "example": "2050-12-14T23:23:09.792+00:00"
           },
           "network_status": {
             "type": "string",
@@ -311,13 +321,13 @@
             "type": "string",
             "format": "date-time",
             "description": "Timestamp of the last IP change",
-            "example": "2023-12-04T17:51:40.339+00:00"
+            "example": "2050-12-04T17:51:40.339+00:00"
           },
           "last_reboot": {
             "type": "string",
             "format": "date-time",
             "description": "Timestamp of the last server reboot",
-            "example": "2023-12-04T17:51:40.339+00:00"
+            "example": "2050-12-04T17:51:40.339+00:00"
           },
           "traffic": {
             "type": "integer",
@@ -343,6 +353,22 @@
             "type": "string",
             "description": "The abbreviated state where the server is located. e.g., `TX`",
             "example": "TX"
+          }
+        }
+      },
+      "proxy-change-ip": {
+        "type": "object",
+        "properties": {
+          "proxy_name": {
+            "type": "string",
+            "description": "Unique identifier of the proxy server",
+            "example": "ILL-US-AU1-9999"
+          },
+          "last_ip_change": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp of when the proxy was added",
+            "example": "2050-12-04T17:43:16.407+00:00"
           }
         }
       },
