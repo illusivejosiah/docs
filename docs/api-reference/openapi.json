@@ -295,6 +295,80 @@
           }
         }
       }
+    },
+    "/v1/proxies/auth/whitelist/{proxyName}": {
+      "patch": {
+        "description": "Updates the whitelist authentication details of a proxy server.",
+        "parameters": [
+          {
+            "name": "proxyName",
+            "in": "path",
+            "description": "Replace `{proxyName}` in the url path with `YOUR_PROXY` to update the authorization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Whitelist authentication details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "authorize_ip": {
+                    "type": "string",
+                    "description": "Set the IP address to authorize. Use commas to specify multiple IP addresses. e.g. `123.123.23,456.456.56/24,789.789.89`.",
+                    "example": "123.123.23,456.456.56/24,789.789.89"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Server response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "description": "Indicates whether the request was successful e.g., `true`"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message",
+                      "example": "Successfully updated and enabled the whitelist IP(s)."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/proxy-basic-auth"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -475,6 +549,27 @@
                 "description": "Password for authentication",
                 "example": "wick05"
             }
+        }
+      },
+      "proxy-basic-whitelist": {
+        "type": "object",
+        "properties": {
+          "proxy_name": {
+            "type": "string",
+            "description": "Unique identifier of the proxy server",
+            "example": "ILL-US-AU1-9999"
+          },
+          "last_auth_change": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp of when the proxy authentication was updated",
+            "example": "2050-12-04T17:43:16.407+00:00"
+          },
+          "whitelist": {
+            "type": "string",
+            "description": "List of whitelisted IP addresses or domains",
+            "example": "123.123.23,456.456.56/24,789.789.89"
+          }
         }
       },
       "proxy-list": {

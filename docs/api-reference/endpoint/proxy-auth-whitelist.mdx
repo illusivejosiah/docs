@@ -1,0 +1,8 @@
+---
+title: 'Whitelist Authentication'
+openapi: 'PATCH /v1/proxies/auth/whitelist/{proxyName}'
+---
+
+By default, all proxies utilize a randomly generated basic authorization in the format of `username:password`. You can disable this basic authorization by updating the proxy's whitelist authorization.
+
+<Info>Basic authorization will be disabled upon successfully updating whitelist authorization.</Info>
