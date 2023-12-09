@@ -154,7 +154,8 @@
       "pages": [
         "docs/api-reference/endpoint/proxy-get",
         "docs/api-reference/endpoint/proxy-list",
-        "docs/api-reference/endpoint/proxy-change-ip"
+        "docs/api-reference/endpoint/proxy-change-ip",
+        "docs/api-reference/endpoint/proxy-change-ip-link"
       ]
     }
   ],
