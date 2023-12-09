@@ -341,7 +341,7 @@
         "type": "http",
         "scheme": "bearer",
         "bearerFormat": "apiKey",
-        "description": "The `Authorization` header is used to authenticate with the API using your API key. Value is of the format `Bearer YOUR_KEY_HERE`."
+        "description": "The `Authorization` header is used to authenticate with the API using your `Master` API key. Value is of the format `Bearer YOUR_KEY_HERE`."
       }
     }
   }
