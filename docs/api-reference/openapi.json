@@ -240,12 +240,12 @@
                 "properties": {
                   "username": {
                     "type": "string",
-                    "description": "Username for authentication e.g., `john`",
+                    "description": "Username for authentication e.g., `john`. If `null`, a random username will be generated.",
                     "example": "john"
                   },
                   "password": {
                     "type": "string",
-                    "description": "Password for authentication e.g., `wick05`",
+                    "description": "Password for authentication e.g., `wick05`. If `null`, a random password will be generated.",
                     "example": "wick05"
                   }
                 }
@@ -320,10 +320,10 @@
                   "authorize_ip": {
                     "type": "string",
                     "description": "Set the IP address to authorize. Use commas to specify multiple IP addresses. e.g. `123.123.23,456.456.56/24,789.789.89`.",
-                    "example": "123.123.23,456.456.56/24,789.789.89",
-                    "required": true
+                    "example": "123.123.23,456.456.56/24,789.789.89"
                   }
-                }
+                },
+                "required": ["authorize_ip"]
               }
             }
           }
