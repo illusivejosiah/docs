@@ -1,0 +1,12 @@
+---
+title: 'Swap'
+openapi: 'POST /v1/proxies/swap/{proxyName}'
+---
+
+Swap a proxy server for a new one from any available ISP and location. This will remove the old proxy server and replace it with a new one.
+
+<Warning>
+    The name of the proxy and port will change after swapping. The server IP may change as well. You have the option to
+    use `copy_settings` to transfer configurations like: `auto_change`, `auto_change_time`, `auth_method`, `username`,
+    `password` and `whitelist`.
+</Warning>

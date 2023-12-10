@@ -582,6 +582,91 @@
           }
         }
       }
+    },
+    "/v1/proxies/swap/{proxyName}": {
+      "post": {
+        "description": "Swaps the proxy server with another proxy server.",
+        "parameters": [
+          {
+            "name": "proxyName",
+            "in": "path",
+            "description": "Replace `{proxyName}` in the url path with `YOUR_PROXY`.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Swap proxy details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "isp": {
+                    "type": "string",
+                    "description": "Name of the Internet Service Provider e.g. `Verizon`",
+                    "example": "Verizon"
+                  },
+                  "location": {
+                    "type": "string",
+                    "description": "City of the proxy server e.g. `Austin`",
+                    "example": "Austin"
+                  },
+                  "copy_settings": {
+                    "type": "boolean",
+                    "description": "Indicates whether to copy the settings of the proxy being swapped with. Default: `false`",
+                    "example": true
+                  }
+                },
+                "required": ["isp", "location"]
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Server response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "description": "Indicates whether the request was successful e.g., `true`"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message",
+                      "example": "Auto Change updated for ILL-US-AU1-9999 successfully."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/proxy-swap"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -845,6 +930,16 @@
             "type": "integer",
             "description": "Indicates the time interval for automatic IP change, in minutes",
             "example": 10
+          }
+        }
+      },
+      "proxy-swap": {
+        "type": "object",
+        "properties": {
+          "proxy_name": {
+            "type": "string",
+            "description": "Unique identifier of the proxy server",
+            "example": "ILL-US-AU1-9999"
           }
         }
       },
