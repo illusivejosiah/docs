@@ -805,12 +805,20 @@
                         "interval",
                         "period"
                       ],
-                      "example": {
-                        "isp": "Verizon",
-                        "location": "Austin",
-                        "interval": 1,
-                        "period": "weekly"
-                      }
+                      "example": [
+                        {
+                          "isp": "Verizon",
+                          "location": "Austin",
+                          "interval": 1,
+                          "period": "weekly"
+                        },
+                        {
+                          "isp": "AT&T",
+                          "location": "Cleveland",
+                          "interval": 2,
+                          "period": "monthly"
+                        }
+                      ]
                     }
                   }
                 },
@@ -1165,7 +1173,7 @@
           },
           "total": {
             "type": "integer",
-            "description": "Total funds deducted from the account in USD",
+            "description": "Total amount to be deducted from your Illusory Wallet.",
             "example": 25
           }
         }
