@@ -881,6 +881,133 @@
           }
         }
       }
+    },
+    "/v1/proxies/allocate": {
+      "post": {
+        "description": "Allocates time to extend the expiration of one or more proxy servers.",
+        "requestBody": {
+          "description": "Allocate proxy details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "proxies": {
+                    "type": "object",
+                    "description": "Object containing a list of proxies to allocate.",
+                    "properties": {
+                      "time": {
+                        "type": "array",
+                        "description": "List of proxies to allocate time to. Each item should include `proxy_name`, `interval` and `period`.",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "proxy_name": {
+                              "type": "string",
+                              "description": "Unique identifier of the proxy server"
+                            },
+                            "interval": {
+                              "type": "integer",
+                              "description": "Interval for allocation period. e.g., `2` weeks."
+                            },
+                            "period": {
+                              "type": "string",
+                              "enum": [
+                                "hourly",
+                                "daily",
+                                "weekly",
+                                "monthly",
+                                "yearly"
+                              ],
+                              "description": "Allocation period, e.g., 'weekly'"
+                            }
+                          },
+                          "required": [
+                            "proxy_name",
+                            "interval",
+                            "period"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "time"
+                    ],
+                    "example": {
+                      "time": [
+                        {
+                          "proxy_name": "ILL-US-AU1-9999",
+                          "interval": 1,
+                          "period": "weekly"
+                        },
+                        {
+                          "proxy_name": "ILL-US-AU1-9998",
+                          "interval": 2,
+                          "period": "monthly"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "proxies"
+                ]
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Server response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "description": "Indicates whether the request was successful e.g., `true`"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message",
+                      "example": "Sent deploy request successfully. Your proxies should be deployed shortly to your dashboard."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/proxy-deploy"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error--422-proxy-low-stock"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
