@@ -155,8 +155,8 @@
         "docs/api-reference/proxy-get",
         "docs/api-reference/proxy-list",
         "docs/api-reference/proxy-change-ip",
-        "docs/api-reference/proxy-change-ip-auto",
         "docs/api-reference/proxy-change-ip-link",
+        "docs/api-reference/proxy-change-ip-auto",
         "docs/api-reference/proxy-auth-basic",
         "docs/api-reference/proxy-auth-whitelist",
         "docs/api-reference/proxy-ipv4"
