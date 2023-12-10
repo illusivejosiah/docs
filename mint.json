@@ -150,35 +150,35 @@
       ]
     },
     {
-      "group": "Proxies",
+      "group": "Proxy Actions",
       "pages": [
-        {
-          "group": "Actions",
-          "pages": [
-            "docs/api-reference/proxies/proxy-change-ip",
-            "docs/api-reference/proxies/proxy-change-ip-link",
-            "docs/api-reference/proxies/proxy-change-ip-auto",
-            "docs/api-reference/proxies/proxy-ipv4",
-            "docs/api-reference/proxies/proxy-power-cycle"
-          ]
-        },
-        {
-          "group": "Authentication",
-          "pages": [
-            "docs/api-reference/proxies/proxy-auth-basic",
-            "docs/api-reference/proxies/proxy-auth-whitelist"
-          ]
-        },
-        {
-          "group": "Management",
-          "pages": [
-            "docs/api-reference/proxies/proxy-get",
-            "docs/api-reference/proxies/proxy-list",
-            "docs/api-reference/proxies/proxy-deploy",
-            "docs/api-reference/proxies/proxy-swap",
-            "docs/api-reference/proxies/proxy-remove"
-          ]
-        }
+        "docs/api-reference/proxies/proxy-change-ip",
+        "docs/api-reference/proxies/proxy-change-ip-link",
+        "docs/api-reference/proxies/proxy-change-ip-auto",
+        "docs/api-reference/proxies/proxy-ipv4",
+        "docs/api-reference/proxies/proxy-power-cycle"
+      ]
+    },
+    {
+      "group": "Proxy Authentication",
+      "pages": [
+        "docs/api-reference/proxies/proxy-auth-basic",
+        "docs/api-reference/proxies/proxy-auth-whitelist"
+      ]
+    },
+    {
+      "group": "Proxy Management",
+      "pages": [
+        "docs/api-reference/proxies/proxy-get",
+        "docs/api-reference/proxies/proxy-list",
+        "docs/api-reference/proxies/proxy-swap",
+        "docs/api-reference/proxies/proxy-remove"
+      ]
+    },
+    {
+      "group": "Account",
+      "pages": [
+        "docs/api-reference/proxies/proxy-deploy"
       ]
     }
   ],
