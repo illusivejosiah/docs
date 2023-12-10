@@ -664,6 +664,16 @@
                 }
               }
             }
+          },
+          "422": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error--422-proxy-swap"
+                }
+              }
+            }
           }
         }
       }
@@ -987,6 +997,36 @@
             "proxy_name": "ILL-US-AU1-9999"
           },
           "message": "Proxy not found"
+        }
+      },
+      "error--422-proxy-swap": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean",
+            "description": "Indicates the request was unsuccessful e.g., `false`"
+          },
+          "data": {
+            "type": "object",
+            "description": "Additional error data",
+            "properties": {
+              "proxy_name": {
+                "type": "string",
+                "description": "Unique identifier of the proxy server"
+              }
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          }
+        },
+        "example": {
+          "ok": false,
+          "data": {
+            "proxy_name": "ILL-US-AU1-9999"
+          },
+          "message": "The amount requested is lower than the available stock. Please review your cart as it may have been revised."
         }
       }
     },
