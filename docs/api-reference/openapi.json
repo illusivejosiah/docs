@@ -380,7 +380,9 @@
                     "example": "123.123.23,456.456.56/24,789.789.89"
                   }
                 },
-                "required": ["authorize_ip"]
+                "required": [
+                  "authorize_ip"
+                ]
               }
             }
           }
@@ -455,7 +457,9 @@
                     "example": "true"
                   }
                 },
-                "required": ["enable"]
+                "required": [
+                  "enable"
+                ]
               }
             }
           }
@@ -535,7 +539,9 @@
                     "example": 10
                   }
                 },
-                "required": ["enable"]
+                "required": [
+                  "enable"
+                ]
               }
             }
           }
@@ -620,7 +626,10 @@
                     "example": true
                   }
                 },
-                "required": ["isp", "location"]
+                "required": [
+                  "isp",
+                  "location"
+                ]
               }
             }
           }
@@ -645,7 +654,7 @@
                     "message": {
                       "type": "string",
                       "description": "Success message",
-                      "example": "Auto Change updated for ILL-US-AU1-9999 successfully."
+                      "example": "Proxy swap command sent to device successfully."
                     },
                     "data": {
                       "$ref": "#/components/schemas/proxy-swap"
@@ -671,6 +680,75 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/error--422-proxy-swap"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/proxies/remove": {
+      "delete": {
+        "description": "Removes one or more proxy servers from the account.",
+        "requestBody": {
+          "description": "Swap proxy details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "proxies": {
+                    "type": "array",
+                    "description": "List of proxy names to remove",
+                    "items": {
+                      "type": "string",
+                      "example": "ILL-US-AU1-9999, ILL-US-AU1-9998"
+                    }
+                  }
+                },
+                "required": [
+                  "proxies"
+                ]
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Server response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "description": "Indicates whether the request was successful e.g., `true`"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message",
+                      "example": "Requested proxy removal successfully. The proxy will be removed shortly."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/proxy-remove"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -868,11 +946,11 @@
             "description": "Username for authentication",
             "example": "john"
           },
-            "password": {
-                "type": "string",
-                "description": "Password for authentication",
-                "example": "wick05"
-            }
+          "password": {
+            "type": "string",
+            "description": "Password for authentication",
+            "example": "wick05"
+          }
         }
       },
       "proxy-basic-whitelist": {
@@ -944,6 +1022,16 @@
         }
       },
       "proxy-swap": {
+        "type": "object",
+        "properties": {
+          "proxy_name": {
+            "type": "string",
+            "description": "Unique identifier of the proxy server",
+            "example": "ILL-US-AU1-9999"
+          }
+        }
+      },
+      "proxy-remove": {
         "type": "object",
         "properties": {
           "proxy_name": {

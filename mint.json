@@ -161,7 +161,8 @@
         "docs/api-reference/proxies/proxy-auth-whitelist",
         "docs/api-reference/proxies/proxy-ipv4",
         "docs/api-reference/proxies/proxy-power-cycle",
-        "docs/api-reference/proxies/proxy-swap"
+        "docs/api-reference/proxies/proxy-swap",
+        "docs/api-reference/proxies/proxy-remove"
       ]
     }
   ],
