@@ -691,7 +691,7 @@
       "delete": {
         "description": "Removes one or more proxy servers from the account.",
         "requestBody": {
-          "description": "Swap proxy details",
+          "description": "Remove proxy details",
           "content": {
             "application/json": {
               "schema": {
@@ -702,7 +702,10 @@
                     "description": "List of proxy names to remove",
                     "items": {
                       "type": "string",
-                      "example": ["ILL-US-AU1-9999","ILL-US-AU1-9998"]
+                      "example": [
+                        "ILL-US-AU1-9999",
+                        "ILL-US-AU1-9998"
+                      ]
                     }
                   }
                 },
@@ -737,6 +740,111 @@
                     },
                     "data": {
                       "$ref": "#/components/schemas/proxy-remove"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/proxies/deploy": {
+      "post": {
+        "description": "Deploys one or more proxy servers.",
+        "requestBody": {
+          "description": "Deploy proxy details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "proxies": {
+                    "type": "array",
+                    "description": "List of proxies to deploy. Each item should include `isp`, `location`, `interval` and `period`.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "isp": {
+                          "type": "string",
+                          "description": "Internet Service Provider"
+                        },
+                        "location": {
+                          "type": "string",
+                          "description": "City of the proxy server. e.g., `Austin`"
+                        },
+                        "interval": {
+                          "type": "integer",
+                          "description": "Interval for deployment period. e.g., `2` weeks."
+                        },
+                        "period": {
+                          "type": "string",
+                          "enum": [
+                            "hourly",
+                            "daily",
+                            "weekly",
+                            "monthly",
+                            "yearly"
+                          ],
+                          "description": "Deployment period, e.g., 'weekly'"
+                        }
+                      },
+                      "required": [
+                        "isp",
+                        "location",
+                        "interval",
+                        "period"
+                      ],
+                      "example": {
+                        "isp": "Verizon",
+                        "location": "Austin",
+                        "interval": 1,
+                        "period": "weekly"
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "proxies"
+                ]
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Server response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "description": "Indicates whether the request was successful e.g., `true`"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message",
+                      "example": "Sent deploy request successfully. Your proxies should be deployed shortly to your dashboard."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/proxy-deploy"
                     }
                   }
                 }
@@ -1034,10 +1142,31 @@
       "proxy-remove": {
         "type": "object",
         "properties": {
-          "proxy_name": {
+          "proxies": {
+            "type": "array",
+            "description": "List of proxies removed",
+            "items": {
+              "type": "string",
+              "example": [
+                "ILL-US-AU1-9999",
+                "ILL-US-AU1-9998"
+              ]
+            }
+          }
+        }
+      },
+      "proxy-deploy": {
+        "type": "object",
+        "properties": {
+          "user_id": {
             "type": "string",
-            "description": "Unique identifier of the proxy server",
-            "example": "ILL-US-AU1-9999"
+            "description": "Unique identifier of the user",
+            "example": "user_1234567890"
+          },
+          "total": {
+            "type": "integer",
+            "description": "Total funds deducted from the account in USD",
+            "example": 25
           }
         }
       },
