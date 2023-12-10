@@ -3,9 +3,10 @@ title: 'Change IP Automatically'
 openapi: 'POST /v1/proxies/autochangeip/{proxyName}'
 ---
 
-Changes the auto-change settings for of a proxy. Auto-change controls whether a proxy automatically changes its external IP on a regular schedule.
+Changes the auto-change settings for of a proxy. Auto-change controls whether a proxy automatically changes its external IP on a regular schedule. Once set, the proxy will automatically change its IP every `rate` minutes.
 
 
 <Info>
-    You can set a proxy's change `rate` (the rate at which it automatically changes IPs) for every `1` to `1440` minutes.`
+    You can set a proxy's change `rate` (the rate at which it automatically changes IPs) for every `1` to `1440`
+    minutes.`
 </Info>
