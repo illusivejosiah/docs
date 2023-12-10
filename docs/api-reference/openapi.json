@@ -1010,7 +1010,7 @@
       }
     },
     "/v1/proxies/allocate/renew": {
-      "post": {
+      "patch": {
         "description": "Allocates time to extend the expiration of one or more proxy servers.",
         "requestBody": {
           "description": "Allocate proxy details",
