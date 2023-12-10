@@ -1591,6 +1591,11 @@
             "type": "boolean",
             "description": "Indicates whether the request was successful e.g., `true`"
           },
+          "message": {
+            "type": "string",
+            "description": "Success message",
+            "example": "Retrieved funds successfully."
+          },
           "data": {
             "type": "object",
             "description": "An object containing the user's funds",
@@ -1599,9 +1604,57 @@
                 "type": "integer",
                 "description": "Amount of funds available"
               },
-              "due": {
-                "type": "integer",
-                "description": "Amount due"
+              "upcoming": {
+                "type": "object",
+                "description": "An object containing the user's upcoming charges",
+                "properties": {
+                  "renewing": {
+                    "type": "object",
+                    "description": "An object containing the user's upcoming renewing charges",
+                    "properties": {
+                      "count": {
+                        "type": "integer",
+                        "description": "Number of proxies renewing"
+                      },
+                      "amount": {
+                        "type": "integer",
+                        "description": "Amount of funds due for renewing proxies"
+                      }
+                    }
+                  },
+                  "expiring": {
+                    "type": "object",
+                    "description": "An object containing the user's upcoming expiring charges",
+                    "properties": {
+                      "count": {
+                        "type": "integer",
+                        "description": "Number of proxies expiring"
+                      },
+                      "amount": {
+                        "type": "integer",
+                        "description": "Amount of funds due for expiring proxies"
+                      }
+                    }
+                  },
+                  "total": {
+                    "type": "object",
+                    "description": "An object containing the user's total upcoming charges",
+                    "properties": {
+                      "renewal_required": {
+                        "type": "integer",
+                        "description": "Amount of funds short to renew proxies"
+                      },
+                      "total_required": {
+                        "type": "integer",
+                        "description": "Amount of funds short to renew and extend expiring proxies"
+                      },
+                      "total_commitment": {
+                        "type": "integer",
+                        "description": "Total cost of all proxies in the account, based on current periods for each proxy"
+                      }
+                    }
+                  }
+                }
               }
             }
           }
