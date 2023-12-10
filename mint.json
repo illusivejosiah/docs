@@ -171,14 +171,9 @@
       "pages": [
         "docs/api-reference/proxies/proxy-get",
         "docs/api-reference/proxies/proxy-list",
+        "docs/api-reference/proxies/proxy-deploy",
         "docs/api-reference/proxies/proxy-swap",
         "docs/api-reference/proxies/proxy-remove"
-      ]
-    },
-    {
-      "group": "Account",
-      "pages": [
-        "docs/api-reference/proxies/proxy-deploy"
       ]
     }
   ],
