@@ -1009,7 +1009,7 @@
         }
       }
     },
-    "/v1/proxies/allocate-renew": {
+    "/v1/proxies/allocate/renew": {
       "post": {
         "description": "Allocates time to extend the expiration of one or more proxy servers.",
         "requestBody": {
