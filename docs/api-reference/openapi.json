@@ -469,7 +469,7 @@
                 "properties": {
                   "enable": {
                     "type": "boolean",
-                    "description": "Auto change external IP status value. If `enable` = `true`, then the proxy will have auto change external IP enabled. Default: `true`",
+                    "description": "Auto change external IP status value. If `enable` = `true`, then the proxy will have auto change external IP enabled. Default: `false`",
                     "example": true
                   },
                   "rate": {
