@@ -1271,7 +1271,10 @@
         "example": {
           "ok": false,
           "data": {
-            "proxy_name": "ILL-US-AU1-9999"
+            "count": 0,
+            "amount": 1,
+            "location": "Cleveland",
+            "isp": "AT&T"
           },
           "message": "The amount requested is lower than the available stock. Please review your cart as it may have been revised."
         }
