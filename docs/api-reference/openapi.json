@@ -702,10 +702,7 @@
                     "description": "List of proxy names to remove",
                     "items": {
                       "type": "string",
-                      "example": [
-                        "ILL-US-AU1-9999",
-                        "ILL-US-AU1-9998"
-                      ]
+                      "example": ["ILL-US-AU1-9999","ILL-US-AU1-9998"]
                     }
                   }
                 },
