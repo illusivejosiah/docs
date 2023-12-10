@@ -1729,46 +1729,49 @@
           "data": {
             "type": "array",
             "description": "An array of stock details",
-            "properties": {
-              "city": {
-                "type": "string",
-                "description": "The city where the server is located",
-                "example": "Austin"
-              },
-              "state": {
-                "type": "string",
-                "description": "The abbreviated state where the server is located. e.g., `TX`",
-                "example": "TX"
-              },
-              "att": {
-                "type": "integer",
-                "description": "Amount of AT&T stock available",
-                "example": 10
-              },
-              "verizon": {
-                "type": "integer",
-                "description": "Amount of Verizon stock available",
-                "example": 10
-              },
-              "tmobile": {
-                "type": "integer",
-                "description": "Amount of T-Mobile stock available",
-                "example": 10
-              },
-              "status": {
-                "type": "string",
-                "description": "Current status of the stock, e.g., `available`, `out`, `coming_soon`",
-                "example": "available"
-              },
-              "open": {
-                "type": "boolean",
-                "description": "Indicates whether the stock is open for purchase",
-                "example": true
-              },
-              "visible": {
-                "type": "boolean",
-                "description": "Indicates whether the stock is visible on the website",
-                "example": true
+            "items": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string",
+                  "description": "The city where the server is located",
+                  "example": "Austin"
+                },
+                "state": {
+                  "type": "string",
+                  "description": "The abbreviated state where the server is located. e.g., `TX`",
+                  "example": "TX"
+                },
+                "att": {
+                  "type": "integer",
+                  "description": "Amount of AT&T stock available",
+                  "example": 10
+                },
+                "verizon": {
+                  "type": "integer",
+                  "description": "Amount of Verizon stock available",
+                  "example": 10
+                },
+                "tmobile": {
+                  "type": "integer",
+                  "description": "Amount of T-Mobile stock available",
+                  "example": 10
+                },
+                "status": {
+                  "type": "string",
+                  "description": "Current status of the stock, e.g., `available`, `out`, `coming_soon`",
+                  "example": "available"
+                },
+                "open": {
+                  "type": "boolean",
+                  "description": "Indicates whether the stock is open for purchase",
+                  "example": true
+                },
+                "visible": {
+                  "type": "boolean",
+                  "description": "Indicates whether the stock is visible on the website",
+                  "example": true
+                }
               }
             }
           }
