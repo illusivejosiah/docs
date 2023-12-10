@@ -98,6 +98,38 @@
         }
       }
     },
+    "/v1/funds": {
+      "get": {
+        "description": "Retrieves the user's Illusory Wallet balance.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Server response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/funds-get"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/proxies/changeip/{proxyName}": {
       "post": {
         "description": "Changes the external mobile IP of a proxy server that is visible to target sites.",
@@ -1548,6 +1580,29 @@
             "description": "An array of proxy details",
             "items": {
               "$ref": "#/components/schemas/proxy-get"
+            }
+          }
+        }
+      },
+      "funds-get": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean",
+            "description": "Indicates whether the request was successful e.g., `true`"
+          },
+          "data": {
+            "type": "object",
+            "description": "An object containing the user's funds",
+            "properties": {
+              "funds": {
+                "type": "integer",
+                "description": "Amount of funds available"
+              },
+              "due": {
+                "type": "integer",
+                "description": "Amount due"
+              }
             }
           }
         }

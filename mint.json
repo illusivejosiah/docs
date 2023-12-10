@@ -177,6 +177,12 @@
         "docs/api-reference/proxies/proxy-swap",
         "docs/api-reference/proxies/proxy-remove"
       ]
+    },
+    {
+      "group": "Platform",
+      "pages": [
+        "docs/api-reference/platform/funds-get"
+      ]
     }
   ],
   "footerSocials": {
