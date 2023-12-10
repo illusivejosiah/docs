@@ -426,7 +426,7 @@
                       "example": "IPv4 update status command sent to device successfully."
                     },
                     "data": {
-                      "$ref": "#/components/schemas/proxy-basic-whitelist"
+                      "$ref": "#/components/schemas/proxy-ipv4"
                     }
                   }
                 }
