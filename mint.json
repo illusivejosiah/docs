@@ -159,7 +159,8 @@
         "docs/api-reference/proxies/proxy-change-ip-auto",
         "docs/api-reference/proxies/proxy-auth-basic",
         "docs/api-reference/proxies/proxy-auth-whitelist",
-        "docs/api-reference/proxies/proxy-ipv4"
+        "docs/api-reference/proxies/proxy-ipv4",
+        "docs/api-reference/proxies/proxy-power-cycle"
       ]
     }
   ],

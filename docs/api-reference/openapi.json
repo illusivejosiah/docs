@@ -155,6 +155,63 @@
         }
       }
     },
+    "/v1/proxies/reboot/{proxyName}": {
+      "post": {
+        "description": "Hard reboots a proxy server.",
+        "parameters": [
+          {
+            "name": "proxyName",
+            "in": "path",
+            "description": "Replace `{proxyName}` in the url path with `YOUR_PROXY`.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Server response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "description": "Indicates whether the request was successful e.g., `true`"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message",
+                      "example": "Power cycle command sent to device successfully."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/proxy-power-cycle"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/proxies/changeip/{limitedApiKey}/{proxyName}": {
       "get": {
         "description": "Changes the external mobile IP using a link and `Limited` API key.",
@@ -676,7 +733,23 @@
           "last_ip_change": {
             "type": "string",
             "format": "date-time",
-            "description": "Timestamp of when the proxy was added",
+            "description": "Timestamp of when the proxy IP was last changed",
+            "example": "2050-12-04T17:43:16.407+00:00"
+          }
+        }
+      },
+      "proxy-power-cycle": {
+        "type": "object",
+        "properties": {
+          "proxy_name": {
+            "type": "string",
+            "description": "Unique identifier of the proxy server",
+            "example": "ILL-US-AU1-9999"
+          },
+          "last_reboot": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp of when the proxy was last rebooted",
             "example": "2050-12-04T17:43:16.407+00:00"
           }
         }
