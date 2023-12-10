@@ -1008,6 +1008,117 @@
           }
         }
       }
+    },
+    "/v1/proxies/allocate-renew": {
+      "post": {
+        "description": "Allocates time to extend the expiration of one or more proxy servers.",
+        "requestBody": {
+          "description": "Allocate proxy details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "proxies": {
+                    "type": "object",
+                    "description": "Object containing a list of proxies to allocate.",
+                    "properties": {
+                      "time": {
+                        "type": "array",
+                        "description": "List of proxies to allocate time to. Each item should include `proxy_name`, `interval` and `period`.",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "proxy_name": {
+                              "type": "string",
+                              "description": "Unique identifier of the proxy server"
+                            },
+                            "interval": {
+                              "type": "integer",
+                              "description": "Interval for renewal period. e.g., `2` weeks. If `interval` = `0`, then auto-renew will be disabled."
+                            },
+                            "auto_renew": {
+                              "type": "boolean",
+                              "description": "Indicates whether the expiration auto-renews",
+                              "example": true
+                            }
+                          },
+                          "required": [
+                            "proxy_name",
+                            "auto_renew",
+                            "interval"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "time"
+                    ],
+                    "example": {
+                      "time": [
+                        {
+                          "proxy_name": "IL-US-AU1-9999",
+                          "auto_renew": true,
+                          "interval": 1
+                        },
+                        {
+                          "proxy_name": "IL-US-AU1-9998",
+                          "auto_renew": true,
+                          "interval": 1
+                        }
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "proxies"
+                ]
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Server response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "description": "Indicates whether the request was successful e.g., `true`"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message",
+                      "example": "Sent proxy allocation renew settings successfully."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/proxy-allocate-renew"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1367,7 +1478,7 @@
           "proxies": {
             "time": [
               {
-                "proxy_name": "VR-US-AU1-1001",
+                "proxy_name": "IL-US-AU1-9999",
                 "period": "hourly",
                 "interval": 1,
                 "individual_total": 5
@@ -1375,6 +1486,54 @@
             ]
           },
           "total": 5
+        }
+      },
+      "proxy-allocate-renew": {
+        "type": "object",
+        "properties": {
+          "proxies": {
+            "type": "object",
+            "description": "Object containing a list of proxies to update.",
+            "properties": {
+              "time": {
+                "type": "array",
+                "description": "List of proxies to update allocation renew settings for. Each item should include `proxy_name`, `interval` and `auto_renew`.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "proxy_name": {
+                      "type": "string",
+                      "description": "Unique identifier of the proxy server"
+                    },
+                    "interval": {
+                      "type": "integer",
+                      "description": "Interval for renewal period. e.g., `2` weeks. If `interval` = `0`, then auto-renew will be disabled."
+                    },
+                    "auto_renew": {
+                      "type": "boolean",
+                      "description": "Indicates whether the expiration auto-renews",
+                      "example": true
+                    }
+                  },
+                  "required": [
+                    "proxy_name",
+                    "auto_renew"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "example": {
+          "proxies": {
+            "time": [
+              {
+                "proxy_name": "IL-US-AU1-9999",
+                "auto_renew": true,
+                "interval": 1
+              }
+            ]
+          }
         }
       },
       "proxy-list": {

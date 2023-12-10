@@ -172,6 +172,7 @@
         "docs/api-reference/proxies/proxy-get",
         "docs/api-reference/proxies/proxy-list",
         "docs/api-reference/proxies/proxy-allocate",
+        "docs/api-reference/proxies/proxy-allocate-renew",
         "docs/api-reference/proxies/proxy-deploy",
         "docs/api-reference/proxies/proxy-swap",
         "docs/api-reference/proxies/proxy-remove"
