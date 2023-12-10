@@ -1658,6 +1658,28 @@
               }
             }
           }
+        },
+        "example": {
+          "ok": true,
+          "message": "Retrieved funds successfully.",
+          "data": {
+            "funds": 40,
+            "upcoming": {
+              "renewing": {
+                "count": 1,
+                "amount": 5
+              },
+              "expiring": {
+                "count": 1,
+                "amount": 5
+              },
+              "total": {
+                "renewal_required": 0,
+                "total_required": 0,
+                "total_commitment": 10
+              }
+            }
+          }
         }
       },
       "Error": {
