@@ -157,7 +157,8 @@
         "docs/api-reference/endpoint/proxy-change-ip",
         "docs/api-reference/endpoint/proxy-change-ip-link",
         "docs/api-reference/endpoint/proxy-auth-basic",
-        "docs/api-reference/endpoint/proxy-auth-whitelist"
+        "docs/api-reference/endpoint/proxy-auth-whitelist",
+        "docs/api-reference/endpoint/proxy-ipv4"
       ]
     }
   ],
