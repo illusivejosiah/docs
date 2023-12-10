@@ -152,14 +152,14 @@
     {
       "group": "Proxies",
       "pages": [
-        "docs/api-reference/proxy-get",
-        "docs/api-reference/proxy-list",
-        "docs/api-reference/proxy-change-ip",
-        "docs/api-reference/proxy-change-ip-link",
-        "docs/api-reference/proxy-change-ip-auto",
-        "docs/api-reference/proxy-auth-basic",
-        "docs/api-reference/proxy-auth-whitelist",
-        "docs/api-reference/proxy-ipv4"
+        "docs/api-reference/proxies/proxy-get",
+        "docs/api-reference/proxies/proxy-list",
+        "docs/api-reference/proxies/proxy-change-ip",
+        "docs/api-reference/proxies/proxy-change-ip-link",
+        "docs/api-reference/proxies/proxy-change-ip-auto",
+        "docs/api-reference/proxies/proxy-auth-basic",
+        "docs/api-reference/proxies/proxy-auth-whitelist",
+        "docs/api-reference/proxies/proxy-ipv4"
       ]
     }
   ],
