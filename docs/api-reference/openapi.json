@@ -118,7 +118,7 @@
           }
         ],
         "responses": {
-          "200": {
+          "202": {
             "description": "Server response",
             "content": {
               "application/json": {
@@ -175,7 +175,7 @@
           }
         ],
         "responses": {
-          "200": {
+          "202": {
             "description": "Server response",
             "content": {
               "application/json": {
@@ -237,7 +237,7 @@
         ],
         "security": [],
         "responses": {
-          "200": {
+          "202": {
             "description": "Server response",
             "content": {
               "application/json": {
@@ -466,7 +466,7 @@
           }
         ],
         "responses": {
-          "200": {
+          "202": {
             "description": "Server response",
             "content": {
               "application/json": {
