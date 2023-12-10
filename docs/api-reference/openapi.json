@@ -122,7 +122,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/error--user-not-found"
                 }
               }
             }
@@ -1710,6 +1710,36 @@
             "proxy_name": "ILL-US-AU1-9999"
           },
           "message": "Proxy not found"
+        }
+      },
+      "error--user-not-found": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean",
+            "description": "Indicates the request was unsuccessful e.g., `false`"
+          },
+          "data": {
+            "type": "object",
+            "description": "Additional error data",
+            "properties": {
+              "user_id": {
+                "type": "string",
+                "description": "Unique identifier of the user"
+              }
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          }
+        },
+        "example": {
+          "ok": false,
+          "data": {
+            "user_id": "user_1234567890"
+          },
+          "message": "User not found."
         }
       },
       "error--422-proxy-low-stock": {
