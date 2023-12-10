@@ -679,7 +679,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/error--422-proxy-swap"
+                  "$ref": "#/components/schemas/error--422-proxy-low-stock"
                 }
               }
             }
@@ -865,6 +865,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error--422-proxy-low-stock"
                 }
               }
             }
@@ -1224,7 +1234,7 @@
           "message": "Proxy not found"
         }
       },
-      "error--422-proxy-swap": {
+      "error--422-proxy-low-stock": {
         "type": "object",
         "properties": {
           "ok": {
