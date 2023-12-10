@@ -461,24 +461,21 @@
           }
         ],
         "requestBody": {
-          "description": "Auto-change IP settings request body",
+          "description": "Auto change external IP settings",
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
                 "properties": {
-                  "rate": {
-                    "type": "integer",
-                    "description": "Auto-change rate in minutes. Must be between `1` and `1440` minutes.",
-                    "required": false,
-                    "default": 10,
-                    "minimum": 1,
-                    "maximum": 1440
-                  },
                   "enable": {
                     "type": "boolean",
-                    "description": "Auto-change enabled. If `enabled` = `true`, then the proxy will automatically change IPs. Default: `true`",
-                    "required": true
+                    "description": "Auto change external IP status value. If `enable` = `true`, then the proxy will have auto change external IP enabled. Default: `true`",
+                    "example": true
+                  },
+                  "rate": {
+                    "type": "integer",
+                    "description": "Time interval for automatic IP change, in minutes. Default: `10`",
+                    "example": 10
                   }
                 },
                 "required": ["enable"]
