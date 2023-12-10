@@ -1359,21 +1359,17 @@
           }
         },
         "example": {
-          "ok": true,
-          "message": "Sent proxy expiration update successfully.",
-          "data": {
-            "proxies": {
-              "time": [
-                {
-                  "proxy_name": "VR-US-AU1-1001",
-                  "period": "hourly",
-                  "interval": 1,
-                  "individual_total": 5
-                }
-              ]
-            },
-            "total": 5
-          }
+          "proxies": {
+            "time": [
+              {
+                "proxy_name": "VR-US-AU1-1001",
+                "period": "hourly",
+                "interval": 1,
+                "individual_total": 5
+              }
+            ]
+          },
+          "total": 5
         }
       },
       "proxy-list": {
