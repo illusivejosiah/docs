@@ -130,6 +130,38 @@
         }
       }
     },
+    "/v1/stock": {
+      "get": {
+        "description": "Retrieves the Illusory product stock.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Server response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/stock-get"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error--stock-not-found"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/proxies/changeip/{proxyName}": {
       "post": {
         "description": "Changes the external mobile IP of a proxy server that is visible to target sites.",
@@ -1682,6 +1714,112 @@
           }
         }
       },
+      "stock-get": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean",
+            "description": "Indicates whether the request was successful e.g., `true`"
+          },
+          "message": {
+            "type": "string",
+            "description": "Success message",
+            "example": "Retrieved stock successfully."
+          },
+          "data": {
+            "type": "array",
+            "description": "An array of stock details",
+            "properties": {
+              "city": {
+                "type": "string",
+                "description": "The city where the server is located",
+                "example": "Austin"
+              },
+              "state": {
+                "type": "string",
+                "description": "The abbreviated state where the server is located. e.g., `TX`",
+                "example": "TX"
+              },
+              "att": {
+                "type": "integer",
+                "description": "Amount of AT&T stock available",
+                "example": 10
+              },
+              "verizon": {
+                "type": "integer",
+                "description": "Amount of Verizon stock available",
+                "example": 10
+              },
+              "tmobile": {
+                "type": "integer",
+                "description": "Amount of T-Mobile stock available",
+                "example": 10
+              },
+              "status": {
+                "type": "string",
+                "description": "Current status of the stock, e.g., `available`, `out`, `coming_soon`",
+                "example": "available"
+              },
+              "open": {
+                "type": "boolean",
+                "description": "Indicates whether the stock is open for purchase",
+                "example": true
+              },
+              "visible": {
+                "type": "boolean",
+                "description": "Indicates whether the stock is visible on the website",
+                "example": true
+              }
+            }
+          }
+        },
+        "example": {
+          "ok": true,
+          "message": "Retrieved stock successfully.",
+          "data": [
+            {
+              "city": "Austin",
+              "state": "TX",
+              "att": 0,
+              "verizon": 39,
+              "tmobile": 0,
+              "status": "available",
+              "open": true,
+              "visible": true
+            },
+            {
+              "city": "Cleveland",
+              "state": "OH",
+              "att": 0,
+              "verizon": 1,
+              "tmobile": 0,
+              "status": "available",
+              "open": true,
+              "visible": true
+            },
+            {
+              "city": "Los Angeles",
+              "state": "CA",
+              "att": 0,
+              "verizon": 0,
+              "tmobile": 0,
+              "status": "out",
+              "open": true,
+              "visible": true
+            },
+            {
+              "city": "New York",
+              "state": "NY",
+              "att": 0,
+              "verizon": 0,
+              "tmobile": 0,
+              "status": "coming",
+              "open": false,
+              "visible": true
+            }
+          ]
+        }
+      },
       "Error": {
         "type": "object",
         "properties": {
@@ -1740,6 +1878,24 @@
             "user_id": "user_1234567890"
           },
           "message": "User not found."
+        }
+      },
+      "error--stock-not-found": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean",
+            "description": "Indicates the request was unsuccessful e.g., `false`"
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          }
+        },
+        "example": {
+          "ok": false,
+          "data": {},
+          "message": "Error checking stock."
         }
       },
       "error--422-proxy-low-stock": {

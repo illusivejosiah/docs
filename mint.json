@@ -150,6 +150,13 @@
       ]
     },
     {
+      "group": "Platform",
+      "pages": [
+        "docs/api-reference/platform/funds-get",
+        "docs/api-reference/platform/stock-get"
+      ]
+    },
+    {
       "group": "Proxy Actions",
       "pages": [
         "docs/api-reference/proxies/proxy-change-ip",
@@ -176,12 +183,6 @@
         "docs/api-reference/proxies/proxy-deploy",
         "docs/api-reference/proxies/proxy-swap",
         "docs/api-reference/proxies/proxy-remove"
-      ]
-    },
-    {
-      "group": "Platform",
-      "pages": [
-        "docs/api-reference/platform/funds-get"
       ]
     }
   ],
