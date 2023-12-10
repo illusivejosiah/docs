@@ -976,10 +976,10 @@
                     "message": {
                       "type": "string",
                       "description": "Success message",
-                      "example": "Sent deploy request successfully. Your proxies should be deployed shortly to your dashboard."
+                      "example": "Sent proxy expiration update successfully."
                     },
                     "data": {
-                      "$ref": "#/components/schemas/proxy-deploy"
+                      "$ref": "#/components/schemas/proxy-allocate"
                     }
                   }
                 }
@@ -996,12 +996,12 @@
               }
             }
           },
-          "422": {
+          "402": {
             "description": "Unexpected error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/error--422-proxy-low-stock"
+                  "$ref": "#/components/schemas/error--402-user-low-funds"
                 }
               }
             }
@@ -1315,6 +1315,50 @@
           }
         }
       },
+      "proxy-allocate": {
+        "type": "object",
+        "properties": {
+          "proxies": {
+            "type": "object",
+            "description": "Object containing a list of proxies to allocate.",
+            "properties": {
+              "time": {
+                "type": "array",
+                "description": "List of proxies to allocate time to. Each item should include `proxy_name`, `interval` and `period`.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "proxy_name": {
+                      "type": "string",
+                      "description": "Unique identifier of the proxy server"
+                    },
+                    "interval": {
+                      "type": "integer",
+                      "description": "Interval for allocation period. e.g., `2` weeks."
+                    },
+                    "period": {
+                      "type": "string",
+                      "enum": [
+                        "hourly",
+                        "daily",
+                        "weekly",
+                        "monthly",
+                        "yearly"
+                      ],
+                      "description": "Allocation period, e.g., 'weekly'"
+                    }
+                  },
+                  "required": [
+                    "proxy_name",
+                    "interval",
+                    "period"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
       "proxy-list": {
         "type": "object",
         "properties": {
@@ -1404,6 +1448,41 @@
             "isp": "AT&T"
           },
           "message": "The amount requested is lower than the available stock. Please review your cart as it may have been revised."
+        }
+      },
+      "error--402-user-low-funds": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean",
+            "description": "Indicates the request was unsuccessful e.g., `false`"
+          },
+          "data": {
+            "type": "object",
+            "description": "Additional error data",
+            "properties": {
+              "funds": {
+                "type": "integer",
+                "description": "Amount of funds available"
+              },
+              "due": {
+                "type": "integer",
+                "description": "Amount due"
+              }
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          }
+        },
+        "example": {
+          "ok": false,
+          "data": {
+            "funds": 40,
+            "due": 2198
+          },
+          "message": "Insufficient funds. Please add funds to your wallet."
         }
       }
     },
