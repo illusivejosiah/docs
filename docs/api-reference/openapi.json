@@ -1346,6 +1346,11 @@
                         "yearly"
                       ],
                       "description": "Allocation period, e.g., 'weekly'"
+                    },
+                    "individual_total": {
+                      "type": "integer",
+                      "description": "Total amount to be deducted from your Illusory Wallet for the allocation item.",
+                      "example": 5
                     }
                   },
                   "required": [
