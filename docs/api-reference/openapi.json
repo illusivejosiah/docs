@@ -1245,9 +1245,21 @@
             "type": "object",
             "description": "Additional error data",
             "properties": {
-              "proxy_name": {
+              "count": {
+                "type": "integer",
+                "description": "Amount of product stock available"
+              },
+              "amount": {
+                "type": "integer",
+                "description": "Amount of product requested"
+              },
+              "location": {
                 "type": "string",
-                "description": "Unique identifier of the proxy server"
+                "description": "Location of stock with discrepancy"
+              },
+              "isp": {
+                "type": "string",
+                "description": "ISP of stock with discrepancy"
               }
             }
           },
