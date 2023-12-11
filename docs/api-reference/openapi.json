@@ -946,6 +946,135 @@
         }
       }
     },
+    "/v1/price": {
+      "post": {
+        "description": "Retrieves the pricing details for one or more proxies.",
+        "requestBody": {
+          "description": "Pricing details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "proxies": {
+                    "type": "array",
+                    "description": "List of proxies to retrieve pricing for. Each item should include `isp`, `location`, `interval` and `period`.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "isp": {
+                          "type": "string",
+                          "description": "Internet Service Provider"
+                        },
+                        "location": {
+                          "type": "string",
+                          "description": "City of the proxy server. e.g., `Austin`"
+                        },
+                        "interval": {
+                          "type": "integer",
+                          "description": "Interval for deployment period. e.g., `2` weeks."
+                        },
+                        "period": {
+                          "type": "string",
+                          "enum": [
+                            "hourly",
+                            "daily",
+                            "weekly",
+                            "monthly",
+                            "yearly"
+                          ],
+                          "description": "Deployment period, e.g., 'weekly'"
+                        }
+                      },
+                      "required": [
+                        "isp",
+                        "location",
+                        "interval",
+                        "period"
+                      ],
+                      "example": [
+                        {
+                          "isp": "Verizon",
+                          "location": "Austin",
+                          "interval": 1,
+                          "period": "weekly"
+                        },
+                        {
+                          "isp": "Verizon",
+                          "location": "Austin",
+                          "interval": 1,
+                          "period": "monthly"
+                        },
+                        {
+                          "isp": "AT&T",
+                          "location": "Cleveland",
+                          "interval": 2,
+                          "period": "monthly"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "proxies"
+                ]
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Server response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "description": "Indicates whether the request was successful e.g., `true`"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message",
+                      "example": "Retrieved pricing details successfully."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/price-get"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error--422-proxy-low-stock"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/proxies/allocate": {
       "post": {
         "description": "Allocates time to extend the expiration of one or more proxy servers.",
@@ -1075,7 +1204,7 @@
     },
     "/v1/proxies/allocate/renew": {
       "patch": {
-        "description": "Allocates time to extend the expiration of one or more proxy servers.",
+        "description": "Updates the auto-renew settings of one or more proxy servers.",
         "requestBody": {
           "description": "Allocate proxy details",
           "content": {
@@ -1487,6 +1616,215 @@
             "type": "integer",
             "description": "Total amount to be deducted from your Illusory Wallet.",
             "example": 25
+          }
+        }
+      },
+      "price-get": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "member": {
+                "type": "boolean"
+              },
+              "periods": {
+                "type": "object",
+                "properties": {
+                  "weekly": {
+                    "$ref": "#/components/schemas/PeriodDetail"
+                  },
+                  "monthly": {
+                    "$ref": "#/components/schemas/PeriodDetail"
+                  }
+                }
+              },
+              "savings": {
+                "$ref": "#/components/schemas/Savings"
+              },
+              "total": {
+                "$ref": "#/components/schemas/Total"
+              }
+            },
+            "example": {
+              "member": true,
+              "periods": {
+                "weekly": {
+                  "individual": {
+                    "VR-AU-D03C11FA": {
+                      "interval": 1,
+                      "standard": 99,
+                      "member": 89,
+                      "total": 89
+                    }
+                  },
+                  "bulk": {
+                    "individual": 1,
+                    "price": null
+                  },
+                  "total": {
+                    "standard": 99,
+                    "member": 89,
+                    "due": 89
+                  }
+                },
+                "monthly": {
+                  "individual": {
+                    "VR-AU-29A225F3": {
+                      "interval": 1,
+                      "standard": 279,
+                      "member": 229,
+                      "total": 219
+                    },
+                    "AT-CL-4AABB4B5": {
+                      "interval": 2,
+                      "standard": 279,
+                      "member": 229,
+                      "total": 438
+                    }
+                  },
+                  "bulk": {
+                    "individual": 2,
+                    "price": 219
+                  },
+                  "total": {
+                    "standard": 837,
+                    "member": 687,
+                    "due": 657
+                  }
+                }
+              },
+              "savings": {
+                "member": {
+                  "weekly": {
+                    "individual": 10,
+                    "total": 10
+                  },
+                  "monthly": {
+                    "individual": 50,
+                    "total": 150
+                  }
+                },
+                "bulk": {
+                  "weekly": {
+                    "individual": 0,
+                    "total": 0
+                  },
+                  "monthly": {
+                    "individual": 10,
+                    "total": 30
+                  }
+                },
+                "interval": 18,
+                "total": 208
+              },
+              "total": {
+                "standard": 936,
+                "member": 776,
+                "due": 728
+              }
+            }
+          }
+        }
+      },
+      "PeriodDetail": {
+        "type": "object",
+        "properties": {
+          "individual": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/PriceDetail"
+            }
+          },
+          "bulk": {
+            "type": "object",
+            "properties": {
+              "individual": {
+                "type": "integer"
+              },
+              "price": {
+                "type": "integer",
+                "nullable": true
+              }
+            }
+          },
+          "total": {
+            "$ref": "#/components/schemas/Total"
+          }
+        }
+      },
+      "PriceDetail": {
+        "type": "object",
+        "properties": {
+          "interval": {
+            "type": "integer"
+          },
+          "standard": {
+            "type": "integer"
+          },
+          "member": {
+            "type": "integer"
+          },
+          "total": {
+            "type": "integer"
+          }
+        }
+      },
+      "Savings": {
+        "type": "object",
+        "properties": {
+          "member": {
+            "type": "object",
+            "properties": {
+              "weekly": {
+                "$ref": "#/components/schemas/SavingDetail"
+              },
+              "monthly": {
+                "$ref": "#/components/schemas/SavingDetail"
+              }
+            }
+          },
+          "bulk": {
+            "type": "object",
+            "properties": {
+              "weekly": {
+                "$ref": "#/components/schemas/SavingDetail"
+              },
+              "monthly": {
+                "$ref": "#/components/schemas/SavingDetail"
+              }
+            }
+          },
+          "interval": {
+            "type": "integer"
+          },
+          "total": {
+            "type": "integer"
+          }
+        }
+      },
+      "SavingDetail": {
+        "type": "object",
+        "properties": {
+          "individual": {
+            "type": "integer"
+          },
+          "total": {
+            "type": "integer"
+          }
+        }
+      },
+      "Total": {
+        "type": "object",
+        "properties": {
+          "standard": {
+            "type": "integer"
+          },
+          "member": {
+            "type": "integer"
+          },
+          "due": {
+            "type": "integer"
           }
         }
       },
