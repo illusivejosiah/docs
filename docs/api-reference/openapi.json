@@ -1622,108 +1622,100 @@
       "price-get": {
         "type": "object",
         "properties": {
-          "data": {
+          "member": {
+            "type": "boolean"
+          },
+          "periods": {
             "type": "object",
             "properties": {
-              "member": {
-                "type": "boolean"
-              },
-              "periods": {
-                "type": "object",
-                "properties": {
-                  "weekly": {
-                    "$ref": "#/components/schemas/PeriodDetail"
-                  },
-                  "monthly": {
-                    "$ref": "#/components/schemas/PeriodDetail"
-                  }
-                }
-              },
-              "savings": {
-                "$ref": "#/components/schemas/Savings"
-              },
-              "total": {
-                "$ref": "#/components/schemas/Total"
-              }
-            },
-            "example": {
-              "member": true,
-              "periods": {
-                "weekly": {
-                  "individual": {
-                    "VR-AU-D03C11FA": {
-                      "interval": 1,
-                      "standard": 99,
-                      "member": 89,
-                      "total": 89
-                    }
-                  },
-                  "bulk": {
-                    "individual": 1,
-                    "price": null
-                  },
-                  "total": {
-                    "standard": 99,
-                    "member": 89,
-                    "due": 89
-                  }
-                },
-                "monthly": {
-                  "individual": {
-                    "VR-AU-29A225F3": {
-                      "interval": 1,
-                      "standard": 279,
-                      "member": 229,
-                      "total": 219
-                    },
-                    "AT-CL-4AABB4B5": {
-                      "interval": 2,
-                      "standard": 279,
-                      "member": 229,
-                      "total": 438
-                    }
-                  },
-                  "bulk": {
-                    "individual": 2,
-                    "price": 219
-                  },
-                  "total": {
-                    "standard": 837,
-                    "member": 687,
-                    "due": 657
-                  }
-                }
-              },
-              "savings": {
-                "member": {
-                  "weekly": {
-                    "individual": 10,
-                    "total": 10
-                  },
-                  "monthly": {
-                    "individual": 50,
-                    "total": 150
-                  }
-                },
-                "bulk": {
-                  "weekly": {
-                    "individual": 0,
-                    "total": 0
-                  },
-                  "monthly": {
-                    "individual": 10,
-                    "total": 30
-                  }
-                },
-                "interval": 18,
-                "total": 208
-              },
-              "total": {
-                "standard": 936,
-                "member": 776,
-                "due": 728
+              "period": {
+                "$ref": "#/components/schemas/PeriodDetail"
               }
             }
+          },
+          "savings": {
+            "$ref": "#/components/schemas/Savings"
+          },
+          "total": {
+            "$ref": "#/components/schemas/Total"
+          }
+        },
+        "example": {
+          "member": true,
+          "periods": {
+            "weekly": {
+              "individual": {
+                "VR-AU-D03C11FA": {
+                  "interval": 1,
+                  "standard": 99,
+                  "member": 89,
+                  "total": 89
+                }
+              },
+              "bulk": {
+                "individual": 1,
+                "price": null
+              },
+              "total": {
+                "standard": 99,
+                "member": 89,
+                "due": 89
+              }
+            },
+            "monthly": {
+              "individual": {
+                "VR-AU-29A225F3": {
+                  "interval": 1,
+                  "standard": 279,
+                  "member": 229,
+                  "total": 219
+                },
+                "AT-CL-4AABB4B5": {
+                  "interval": 2,
+                  "standard": 279,
+                  "member": 229,
+                  "total": 438
+                }
+              },
+              "bulk": {
+                "individual": 2,
+                "price": 219
+              },
+              "total": {
+                "standard": 837,
+                "member": 687,
+                "due": 657
+              }
+            }
+          },
+          "savings": {
+            "member": {
+              "weekly": {
+                "individual": 10,
+                "total": 10
+              },
+              "monthly": {
+                "individual": 50,
+                "total": 150
+              }
+            },
+            "bulk": {
+              "weekly": {
+                "individual": 0,
+                "total": 0
+              },
+              "monthly": {
+                "individual": 10,
+                "total": 30
+              }
+            },
+            "interval": 18,
+            "total": 208
+          },
+          "total": {
+            "standard": 936,
+            "member": 776,
+            "due": 728
           }
         }
       },
@@ -1776,10 +1768,7 @@
           "member": {
             "type": "object",
             "properties": {
-              "weekly": {
-                "$ref": "#/components/schemas/SavingDetail"
-              },
-              "monthly": {
+              "period": {
                 "$ref": "#/components/schemas/SavingDetail"
               }
             }
@@ -1787,10 +1776,7 @@
           "bulk": {
             "type": "object",
             "properties": {
-              "weekly": {
-                "$ref": "#/components/schemas/SavingDetail"
-              },
-              "monthly": {
+              "period": {
                 "$ref": "#/components/schemas/SavingDetail"
               }
             }
