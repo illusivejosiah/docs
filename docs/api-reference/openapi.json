@@ -1638,11 +1638,11 @@
               },
               "upcoming": {
                 "type": "object",
-                "description": "An object containing the user's upcoming charges",
+                "description": "An object containing the user's upcoming charges.",
                 "properties": {
                   "renewing": {
                     "type": "object",
-                    "description": "An object containing the user's upcoming renewing charges",
+                    "description": "An object containing the user's upcoming renewing charges within the next 24 hours.",
                     "properties": {
                       "count": {
                         "type": "integer",
@@ -1656,7 +1656,7 @@
                   },
                   "expiring": {
                     "type": "object",
-                    "description": "An object containing the user's upcoming expiring charges",
+                    "description": "An object containing the user's upcoming expiring charges within the next 24 hours.",
                     "properties": {
                       "count": {
                         "type": "integer",

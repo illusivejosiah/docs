@@ -153,7 +153,8 @@
       "group": "Platform",
       "pages": [
         "docs/api-reference/platform/funds-get",
-        "docs/api-reference/platform/stock-get"
+        "docs/api-reference/platform/stock-get",
+        "docs/api-reference/platform/price-get"
       ]
     },
     {
