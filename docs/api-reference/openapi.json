@@ -1724,19 +1724,23 @@
         "properties": {
           "individual": {
             "type": "object",
+            "description": "Object containing the pricing details for individual items",
             "additionalProperties": {
               "$ref": "#/components/schemas/PriceDetail"
             }
           },
           "bulk": {
             "type": "object",
+            "description": "Object containing the bulk pricing details",
             "properties": {
               "individual": {
-                "type": "integer"
+                "type": "integer",
+                "description": "Number of items to be deployed"
               },
               "price": {
                 "type": "integer",
-                "nullable": true
+                "nullable": true,
+                "description": "Bulk pricing per item. If `null`, then bulk pricing is not available for the period."
               }
             }
           },
@@ -1749,16 +1753,20 @@
         "type": "object",
         "properties": {
           "interval": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Interval for deployment period. e.g., `2` weeks."
           },
           "standard": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Standard pricing per item"
           },
           "member": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Member pricing per item"
           },
           "total": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Total amount for the item."
           }
         }
       },
@@ -1767,6 +1775,7 @@
         "properties": {
           "member": {
             "type": "object",
+            "description": "Object containing the savings details for members",
             "properties": {
               "period": {
                 "$ref": "#/components/schemas/SavingDetail"
@@ -1775,6 +1784,7 @@
           },
           "bulk": {
             "type": "object",
+            "description": "Object containing the savings details for bulk pricing",
             "properties": {
               "period": {
                 "$ref": "#/components/schemas/SavingDetail"
@@ -1782,10 +1792,12 @@
             }
           },
           "interval": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Total amount saved for interval reductions"
           },
           "total": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Total amount saved"
           }
         }
       },
@@ -1793,10 +1805,12 @@
         "type": "object",
         "properties": {
           "individual": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Amount saved per individual item"
           },
           "total": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Total amount saved"
           }
         }
       },
@@ -1804,13 +1818,16 @@
         "type": "object",
         "properties": {
           "standard": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Total standard pricing"
           },
           "member": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Total member pricing"
           },
           "due": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Total amount due"
           }
         }
       },
