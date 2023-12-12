@@ -1028,7 +1028,7 @@
           }
         ],
         "responses": {
-          "202": {
+          "200": {
             "description": "Server response",
             "content": {
               "application/json": {
@@ -1726,8 +1726,10 @@
           "individual": {
             "type": "object",
             "description": "Object containing the pricing details for individual items",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/PriceDetail"
+            "properties": {
+              "individual_item": {
+                "$ref": "#/components/schemas/PriceDetail"
+              }
             }
           },
           "bulk": {
