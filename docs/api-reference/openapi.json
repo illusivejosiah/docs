@@ -964,15 +964,18 @@
                       "properties": {
                         "isp": {
                           "type": "string",
-                          "description": "Internet Service Provider"
+                          "description": "Internet Service Provider",
+                          "example": "Verizon"
                         },
                         "location": {
                           "type": "string",
-                          "description": "City of the proxy server. e.g., `Austin`"
+                          "description": "City of the proxy server. e.g., `Austin`",
+                          "example": "Austin"
                         },
                         "interval": {
                           "type": "integer",
-                          "description": "Interval for deployment period. e.g., `2` weeks."
+                          "description": "Interval for deployment period. e.g., `2` weeks.",
+                          "example": 2
                         },
                         "period": {
                           "type": "string",
@@ -983,7 +986,8 @@
                             "monthly",
                             "yearly"
                           ],
-                          "description": "Deployment period, e.g., 'weekly'"
+                          "description": "Deployment period, e.g., 'weekly'",
+                          "example": "weekly"
                         }
                       },
                       "required": [
