@@ -5,6 +5,10 @@
     "dark": "/logo/illusory-doc-logo-dark.svg",
     "light": "/logo/illusory-doc-logo-light.svg"
   },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  },
   "favicon": "/illusory-doc-favicon.svg",
   "colors": {
     "primary": "#121212",
