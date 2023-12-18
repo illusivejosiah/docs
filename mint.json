@@ -49,7 +49,7 @@
       "name": "Knowledge Base",
       "icon": "books",
       "iconType": "duotone",
-      "url": "https://mintlify.com/blog"
+      "url": "docs"
     }
   ],
   "navigation": [
