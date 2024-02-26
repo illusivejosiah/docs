@@ -5,6 +5,9 @@
     "dark": "/logo/illusory-doc-logo-dark.svg",
     "light": "/logo/illusory-doc-logo-light.svg"
   },
+  "seo": {
+    "indexHiddenPages": true
+  },
   "feedback": {
     "thumbsRating": true,
     "suggestEdit": true
