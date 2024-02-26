@@ -11,9 +11,9 @@
   },
   "favicon": "/illusory-doc-favicon.svg",
   "colors": {
-    "primary": "#121212",
+    "primary": "#0d0f20",
     "light": "#ffffff",
-    "dark": "#121212",
+    "dark": "#0d0f20",
     "anchors": {
       "from": "#121212",
       "to": "#181818"
