@@ -12,6 +12,7 @@
     "thumbsRating": true,
     "suggestEdit": true
   },
+  "isWhiteLabeled": true,
   "favicon": "/illusory-doc-favicon.svg",
   "colors": {
     "primary": "#0d0f20",
